@@ -8,7 +8,7 @@ export interface RouteType {
 export const routes = {
   root: { href: "/", text: "Root" },
   aboutMe: {
-    href: "/about",
+    href: "/about-me",
     text: "About me",
   },
   contactMe: {
