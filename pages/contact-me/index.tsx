@@ -1,6 +1,29 @@
 import { MyLayout } from "wrappers"
 import { FormikHelpers, Formik, Form } from "formik"
-import { TextInput, Button } from "components"
+import { TextInput, Title } from "components"
+import styled from "styled-components"
+
+const MyButton = styled.button`
+  border-radius: 999px;
+  font-weight: 700;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  background-color: #0984e3;
+  @media (min-width: 640px) {
+    line-height: 2.25rem;
+  }
+  :hover {
+    background-color: #005ea6;
+    transition: all 0.7s;
+  }
+`
+
+const TextArea = styled.textarea`
+  height: 200px;
+  border-radius: 2rem;
+`
 
 interface ContactForm {
   firstname: string
@@ -26,52 +49,45 @@ const onSubmit = (
 export default function ContactMe() {
   return (
     <MyLayout title="Farnam Homayounfar">
-      <Formik initialValues={initialValues} onSubmit={onSubmit}>
-        <Form id="login-form" className="space-y-4 flex flex-wrap">
-          <div className="w-full ">
-            <div className="flex mb-9 flex-col lg:flex-row  flex-wrap lg:flex-no-wrap ">
-              <div className="w-full h-13">
+      <div className="py-10">
+        <Title className="flex justify-center">Contact with Me</Title>
+        <Formik initialValues={initialValues} onSubmit={onSubmit}>
+          <Form id="login-form" className="space-y-4 flex flex-wrap">
+            <div className="w-full pb-10">
+              <div className="flex mb-9 flex-col justify-center mx-auto  flex-wrap lg:flex-no-wrap w-6/12 h-13">
                 <TextInput
                   name="Firstname"
                   placeholder="First Name"
                   type="text"
                   borderRadius={"rounded-full"}
-                  className="my-3 mr-3"
+                  className="my-3"
                 />
                 <TextInput
                   name="Lastname"
                   placeholder="Last Name"
                   type="text"
                   borderRadius={"rounded-full"}
-                  className="mr-3"
                 />
-              </div>
-              <div className="w-full    h-12">
                 <TextInput
                   name="Email"
                   placeholder="Email Address"
                   type="email"
                   borderRadius={"rounded-full"}
-                  className="my-3 "
+                  className="my-3"
                 />
-                <TextInput
-                  name="Phone"
-                  placeholder="Phone Number"
-                  type="number"
-                  borderRadius={"rounded-full"}
-                />
+                <TextArea name="textarea" className="border " />
+                <MyButton
+                  id="submit-button"
+                  type="submit"
+                  className="w-full mt-24 lg:mt-10 text-white"
+                >
+                  Contact Us
+                </MyButton>
               </div>
             </div>
-            <Button
-              id="submit-button"
-              type="submit"
-              className="w-full mt-24 lg:mt-10 text-white bg-accent"
-            >
-              Contact Us
-            </Button>
-          </div>
-        </Form>
-      </Formik>
+          </Form>
+        </Formik>
+      </div>
     </MyLayout>
   )
 }
