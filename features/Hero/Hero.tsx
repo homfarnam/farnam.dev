@@ -1,11 +1,20 @@
+import styled from "styled-components"
+
 interface HeroProps {
   className?: string
 }
 
+const MyTitle = styled.h1`
+  font-family: "Pacifico", cursive;
+  text-transform: capitalize;
+`
+
 const Hero: React.FC<HeroProps> = ({ className = "" }) => {
   return (
     <div className={`flex flex-col justify-center ${className}`}>
-      <h1 className="text-5xl flex justify-center">Farnam Homayounfar</h1>
+      <MyTitle className="text-6xl flex justify-center pb-8">
+        Farnam Homayounfar
+      </MyTitle>
       <h3 className="text-2xl flex justify-center">Frontend developer</h3>
     </div>
   )
