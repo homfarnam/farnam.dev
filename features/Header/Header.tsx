@@ -16,7 +16,7 @@ const Header: React.FC<HeaderProps> = () => {
       <nav className="container mx-auto flex items-center justify-center flex-wrap p-2 sm:p-5">
         {links.map((link) => (
           <Link key={link.text} href={link.href}>
-            <a className="block lg:inline-block mt-4 lg:mt-0 mr-8 align-middle">
+            <a className="block lg:inline-block mt-4 lg:mt-0 mr-8 align-middle text-2xl text-blue-600">
               {link.text}
             </a>
           </Link>
