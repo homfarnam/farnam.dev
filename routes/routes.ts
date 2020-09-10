@@ -15,4 +15,8 @@ export const routes = {
     href: "/contact-me",
     text: "Contact Me",
   },
+  blog: {
+    href: "/blog",
+    text: "blog",
+  },
 }
