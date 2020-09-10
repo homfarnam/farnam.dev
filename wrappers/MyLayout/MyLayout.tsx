@@ -15,8 +15,12 @@ const MyLayout: React.FC<MyLayoutProps> = ({ children, title }) => {
           rel="stylesheet"
         />
         <title key="page-title">{`Farnam Homayounfar - ${title}`}</title>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
       </Head>
-      <div className="flex flex-col min-h-screen justify-between">
+      <div className="flex flex-col min-h-screen justify-between bg-gray-100">
         <Header />
         <main className="container mx-auto flex-grow">{children}</main>
         <Footer />
