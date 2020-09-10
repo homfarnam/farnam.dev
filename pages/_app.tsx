@@ -1,12 +1,17 @@
 import "../styles/index.css"
 import { AppProps } from "next/app"
-import { ApolloProvider } from "@apollo/react-hooks"
+// import { ApolloProvider } from "@apollo/react-hooks"
 import withData from "../utils/apollo"
 import Head from "next/head"
+// import { ApolloClient } from "apollo-client"
 
-function MyApp({ Component, pageProps, apollo }: AppProps) {
+// const client = new ApolloClient({
+//   uri: "https://48p1r2roz4.sse.codesandbox.io",
+// })
+
+function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ApolloProvider client={apollo}>
+    <>
       <Head>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link
@@ -22,7 +27,7 @@ function MyApp({ Component, pageProps, apollo }: AppProps) {
         <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.js" />
       </Head>
       <Component {...pageProps} />
-    </ApolloProvider>
+    </>
   )
 }
 
