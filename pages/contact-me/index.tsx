@@ -48,7 +48,7 @@ const onSubmit = (
 
 export default function ContactMe() {
   return (
-    <MyLayout title="Farnam Homayounfar">
+    <MyLayout title="Contact Me">
       <div className="py-10">
         <Title className="flex justify-center">Contact with Me</Title>
         <Formik initialValues={initialValues} onSubmit={onSubmit}>
