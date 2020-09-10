@@ -67,7 +67,7 @@ const Header: React.FC<HeaderProps> = () => {
         >
           <img
             src="./farnam.jpg"
-            alt="farnam"
+            alt="farnamh"
             className="rounded-full w-10 h-10 border-2 border-transparent hover:border-indigo-400"
           />
         </a>
