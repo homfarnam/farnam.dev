@@ -19,6 +19,8 @@ const MyLayout: React.FC<MyLayoutProps> = ({ children, title }) => {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
+        <meta property="og:title" content="Farnam Homayounfar" />
+        <meta property="og:description" content="Frontend developer" />
       </Head>
       <div className="flex flex-col min-h-screen justify-between bg-gray-100">
         <Header />
