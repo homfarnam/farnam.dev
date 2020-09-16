@@ -1,10 +1,10 @@
 import "../styles/index.css"
-import { AppProps } from "next/app"
+// import { AppProps } from "next/app"
 import { ApolloProvider } from "@apollo/react-hooks"
 import withData from "../utils/apollo"
 import Head from "next/head"
 
-function MyApp({ Component, pageProps, apollo }: AppProps) {
+function MyApp({ Component, pageProps, apollo }: any) {
   return (
     <>
       <ApolloProvider client={apollo}>
