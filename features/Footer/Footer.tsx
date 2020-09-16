@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 const MyFooter = styled.footer`
   clip-path: polygon(0 0, 100% 25%, 100% 100%, 0% 100%);
-  background-color: #333333;
+  background-color: #0984e3;
 `
 
 interface FooterProps {}
