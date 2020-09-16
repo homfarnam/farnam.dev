@@ -9,7 +9,6 @@ module.exports = {
   future: {
     removeDeprecatedGapUtilities: true,
   },
-  important: true,
   prefix: "",
   important: false,
   separator: ":",
