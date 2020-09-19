@@ -1,4 +1,5 @@
 const withCSS = require("@zeit/next-css")
+const withPurgeCss = require("next-purgecss")
 const withFonts = require("next-fonts")
 
 module.exports = withCSS(
