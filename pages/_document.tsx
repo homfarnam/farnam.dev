@@ -14,7 +14,7 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
+      <Html lang="en">
         <Head>
           <link rel="stylesheet" href="./.next/static/style.css" />
         </Head>
