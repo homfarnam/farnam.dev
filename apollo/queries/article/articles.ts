@@ -1,6 +1,6 @@
 import gql from "graphql-tag"
 
-const ARTICLES_QUERY = gql`
+export const getArticles = gql`
   query Articles {
     articles {
       id
@@ -14,4 +14,4 @@ const ARTICLES_QUERY = gql`
   }
 `
 
-export default ARTICLES_QUERY
+export default getArticles
