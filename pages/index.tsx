@@ -1,9 +1,12 @@
 import { MyLayout } from "wrappers"
-import { Hero } from "features"
+// import { Hero } from "features"
 import { Title } from "components"
 import Query from "queries/query"
 import ARTICLES_QUERY from "../apollo/queries/article/articles"
 import Articles from "../components/Articles/Articles"
+import loadable from "@loadable/component"
+
+const Hero = loadable(() => import("../features/Hero/Hero"))
 
 export default function Home() {
   return (
