@@ -3,6 +3,11 @@ import "../styles/index.css"
 import { ApolloProvider } from "@apollo/react-hooks"
 import withData from "../utils/apollo"
 import Head from "next/head"
+// import { NextWebVitalsMetric } from "next/app"
+
+// export function reportWebVitals(metric: NextWebVitalsMetric) {
+//   console.log(metric)
+// }
 
 function MyApp({ Component, pageProps, apollo }: any) {
   return (
