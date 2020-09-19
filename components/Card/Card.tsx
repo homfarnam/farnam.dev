@@ -15,7 +15,7 @@ const Card: React.FC<CardProps> = ({ className, article }) => {
       >
         <Link href={{ pathname: "article", query: { id: article?.id } }}>
           <a>
-            <h4 className="my-5 text-3xl">{article?.title}</h4>
+            <h3 className="my-5 text-3xl">{article?.title}</h3>
           </a>
         </Link>
         <p>{article.description}</p>
