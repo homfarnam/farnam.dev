@@ -16,7 +16,7 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <link rel="stylesheet" href="./.next/static/style.css" media="all" />
+          {/* <link rel="stylesheet" href="./.next/static/style.css" media="all" /> */}
         </Head>
         <body>
           <Main />
