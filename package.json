@@ -39,6 +39,7 @@
         "@fullhuman/postcss-purgecss": "^2.3.0",
         "@types/node": "^14.6.4",
         "@types/react": "^16.9.49",
+        "next-purgecss": "^4.0.0",
         "postcss-preset-env": "^6.7.0",
         "typescript": "^4.0.2"
     }
