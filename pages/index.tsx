@@ -2,7 +2,7 @@ import { MyLayout } from "wrappers"
 // import { Hero } from "features"
 import { Title } from "components"
 import Query from "queries/query"
-import ARTICLES_QUERY from "../apollo/queries/article/articles"
+import getArticles from "../apollo/queries/article/articles"
 import Articles from "../components/Articles/Articles"
 import loadable from "@loadable/component"
 
@@ -17,7 +17,7 @@ export default function Home() {
 
       <div className="flex flex-col flex-wrap md:flex-no-wrap justify-center items-center md:flex-row">
         {/* <Card className="my-10" /> */}
-        <Query query={ARTICLES_QUERY}>
+        <Query query={getArticles}>
           {({ data: { articles } }: any) => {
             return (
               <Articles
