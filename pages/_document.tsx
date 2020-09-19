@@ -1,5 +1,4 @@
 import Document, {
-  Head,
   Main,
   NextScript,
   Html,
@@ -15,9 +14,6 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head>
-          <link rel="stylesheet" href="./.next/static/style.css" media="all" />
-        </Head>
         <body>
           <Main />
           <NextScript />
