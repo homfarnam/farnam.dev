@@ -1,11 +1,19 @@
 const withCSS = require("@zeit/next-css")
 const withFonts = require("next-fonts")
 
-module.exports = withCSS({
-  env: {
-    API_URL: process.env.API_URL,
+module.exports = withCSS(
+  {
+    env: {
+      API_URL: process.env.API_URL,
+    },
   },
-})
+  withPurgeCss({
+    purgeCssPaths: [
+      "pages/**/*",
+      "components/**/*", // also scan other-components folder
+    ],
+  })
+)
 
 module.exports = {
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
