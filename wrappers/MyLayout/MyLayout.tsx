@@ -21,6 +21,7 @@ const MyLayout: React.FC<MyLayoutProps> = ({ children, title }) => {
         />
         <meta property="og:title" content="Farnam Homayounfar" />
         <meta property="og:description" content="Frontend developer" />
+        <meta name="Description" content="Frontend developer" />
       </Head>
       <div className="flex flex-col min-h-screen justify-between bg-gray-100">
         <Header />
