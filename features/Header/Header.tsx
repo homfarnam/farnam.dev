@@ -61,29 +61,9 @@ const Header: React.FC<HeaderProps> = () => {
             ))}
           </ul>
         </nav>
-        <a
-          href="#"
-          className="lg:ml-4 hidden lg:flex items-center justify-start lg:mb-0 cursor-pointer"
-        >
-          <img
-            src="./farnam.jpg"
-            alt="farnamh"
-            className="rounded-full w-10 h-10 border-2 border-transparent hover:border-indigo-400"
-          />
-        </a>
       </div>
     </MyHeader>
   )
 }
 
 export default Header
-
-// <nav className="container mx-auto flex items-center justify-center flex-wrap p-2 sm:p-5">
-// {links.map((link) => (
-//   <Link key={link.text} href={link.href}>
-//     <a className="block lg:inline-block mt-4 lg:mt-0 mr-8 align-middle text-2xl text-blue-600">
-//       {link.text}
-//     </a>
-//   </Link>
-// ))}
-// </nav>
