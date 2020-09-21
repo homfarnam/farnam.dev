@@ -11,7 +11,7 @@ const Card: React.FC<CardProps> = ({ className, article }) => {
   return (
     <>
       <div
-        className={`border-gray-900 border-2 flex flex-col p-5 w-10/12  md:w-1/3 h-11/12 rounded-lg justify-between items-start  px-8 mr-5 bg-indigo-100 ${className}`}
+        className={`border-gray-900 border-2 flex flex-col p-5 w-10/12  md:w-1/3 h-11/12 rounded-lg justify-between items-start  px-8 mr-auto bg-indigo-100 ${className}`}
       >
         <Link href={{ pathname: "article", query: { id: article?.id } }}>
           <a>
