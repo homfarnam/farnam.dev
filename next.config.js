@@ -1,6 +1,15 @@
 const withCSS = require("@zeit/next-css")
 const withPurgeCss = require("next-purgecss")
 const withFonts = require("next-fonts")
+const withBabelMinify = require("next-babel-minify")({
+  comments: false,
+})
+
+module.exports = withBabelMinify({
+  webpack(config, options) {
+    return config
+  },
+})
 
 module.exports = withCSS(
   {
