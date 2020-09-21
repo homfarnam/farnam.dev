@@ -1,1 +1,1 @@
-export { default as MyLayout } from "./MyLayout";
+export { default as MyLayout } from "./MyLayout"
