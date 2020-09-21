@@ -22,7 +22,7 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "isolatedModules": false,
+    "isolatedModules": true,
     "types": [
       "webpack-env",
       "jest"
