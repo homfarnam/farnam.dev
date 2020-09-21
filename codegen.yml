@@ -1,0 +1,4 @@
+schema: https://cms.farnamh.ir/graphql
+generates:
+  src/types.ts:
+    - typescript
