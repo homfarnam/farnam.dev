@@ -13,7 +13,7 @@ export default function Home() {
     <MyLayout title="Farnam Homayounfar">
       <Hero className="pt-5" />
       {/* Blog */}
-      <Title className="mt-10">Blog</Title>
+      <Title className="mt-10 ml-20 sm:ml-10">Blog</Title>
 
       <div className="flex flex-col flex-wrap md:flex-no-wrap justify-center items-center md:flex-row">
         {/* <Card className="my-10" /> */}
@@ -21,7 +21,7 @@ export default function Home() {
           {({ data: { articles } }: any) => {
             return (
               <Articles
-                className="flex flex-col md:flex-row my-10 pb-10"
+                className="flex flex-col md:flex-row lg:justify-start  my-10 pb-10"
                 articles={articles}
               />
             )
