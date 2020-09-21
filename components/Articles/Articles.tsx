@@ -13,7 +13,13 @@ const Articles: React.FC<ArticlesProps> = ({ articles, className }) => {
     <div className={`${className}`}>
       {myArticles.map(
         (article: { id: number; name: string; description: string }) => {
-          return <Card article={article} key={article.id} />
+          return (
+            <Card
+              className=" mx-auto my-5 lg:my-0 lg:mx-10 "
+              article={article}
+              key={article.id}
+            />
+          )
         }
       )}
     </div>
