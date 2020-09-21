@@ -22,7 +22,11 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "isolatedModules": false
+    "isolatedModules": false,
+    "types": [
+      "webpack-env",
+      "jest"
+    ],
   },
   "exclude": [
     "node_modules",
