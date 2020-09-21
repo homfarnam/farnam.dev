@@ -24,7 +24,6 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "types": [
-      "webpack-env",
       "jest"
     ],
   },
