@@ -8,11 +8,11 @@
 // ====================================================
 
 export interface Categories_categories {
-  __typename: "Category";
-  id: string;
-  name: string | null;
+  __typename: "Category"
+  id: string
+  name: string | null
 }
 
 export interface Categories {
-  categories: (Categories_categories | null)[] | null;
+  categories: (Categories_categories | null)[] | null
 }
