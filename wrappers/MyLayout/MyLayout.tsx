@@ -10,10 +10,10 @@ const MyLayout: React.FC<MyLayoutProps> = ({ children, title }) => {
   return (
     <>
       <Head>
-        <link
+        {/* <link
           href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
           rel="stylesheet"
-        />
+        /> */}
         <title key="page-title">{`Farnam Homayounfar - ${title}`}</title>
         <meta
           name="viewport"
