@@ -1,13 +1,7 @@
 import "../styles/index.css"
-// import { AppProps } from "next/app"
 import { ApolloProvider } from "@apollo/react-hooks"
 import withData from "../utils/apollo"
 import Head from "next/head"
-// import { NextWebVitalsMetric } from "next/app"
-
-// export function reportWebVitals(metric: NextWebVitalsMetric) {
-//   console.log(metric)
-// }
 
 function MyApp({ Component, pageProps, apollo }: any) {
   return (
@@ -22,13 +16,13 @@ function MyApp({ Component, pageProps, apollo }: any) {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Staatliches"
           />
-          <link
+          {/* <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/css/uikit.min.css"
-          />
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.min.js" />
+          /> */}
+          {/* <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.min.js" />
           <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit-icons.min.js" />
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.js" />
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.js" /> */}
         </Head>
 
         <Component {...pageProps} />
