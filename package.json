@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "dev": "yarn codegen && next dev",
+        "dev": "yarn codegen && next dev -p 8080",
         "build": "next build",
         "start": "next start",
         "type-check": "tsc --pretty --noEmit",

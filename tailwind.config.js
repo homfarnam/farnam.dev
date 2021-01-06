@@ -135,6 +135,14 @@ module.exports = {
         800: "#97266d",
         900: "#702459",
       },
+      backbody: {
+        100: "#FAF9F7",
+        200: "#F2F7F6",
+      },
+      Hero: {
+        title: "#34C9AB",
+        subtitle: "#0483cc;",
+      },
     },
     spacing: {
       px: "1px",
