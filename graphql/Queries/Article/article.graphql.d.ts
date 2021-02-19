@@ -126,7 +126,7 @@ export declare type Articles = {
     updated_at: Scalars['DateTime'];
     title?: Maybe<Scalars['String']>;
     description?: Maybe<Scalars['String']>;
-    published_at: Scalars['Date'];
+    published_at?: Maybe<Scalars['Date']>;
     category?: Maybe<Category>;
     created_by?: Maybe<AdminUser>;
     updated_by?: Maybe<AdminUser>;
@@ -809,7 +809,7 @@ export declare type CreateArticleInput = {
 export declare type ArticleInput = {
     title?: Maybe<Scalars['String']>;
     description?: Maybe<Scalars['String']>;
-    published_at: Scalars['Date'];
+    published_at?: Maybe<Scalars['Date']>;
     category?: Maybe<Scalars['ID']>;
     created_by?: Maybe<Scalars['ID']>;
     updated_by?: Maybe<Scalars['ID']>;

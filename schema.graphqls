@@ -103,7 +103,7 @@ type Articles {
   description: String
 
   """"""
-  published_at: Date!
+  published_at: Date
 
   """"""
   category: Category
@@ -1312,7 +1312,7 @@ input ArticleInput {
   description: String
 
   """"""
-  published_at: Date!
+  published_at: Date
 
   """"""
   category: ID
