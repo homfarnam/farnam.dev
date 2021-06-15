@@ -53,7 +53,6 @@ const MyPic = styled.img`
 `
 
 const Bio = styled.div`
-  font-family: "Blacker", sans-serif;
   font-size: 24px;
   line-height: 32px;
   font-weight: 400;
