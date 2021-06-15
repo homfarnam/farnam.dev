@@ -16,7 +16,7 @@ export default function Home() {
 
       <div className="flex flex-col flex-wrap md:flex-no-wrap justify-center items-center md:flex-row">
         {/* <Card className="my-10" /> */}
-        <Query query={getArticles}>
+        {/* <Query query={getArticles}>
           {({ data: { articles } }: any) => {
             return (
               <Articles
@@ -25,7 +25,7 @@ export default function Home() {
               />
             )
           }}
-        </Query>
+        </Query> */}
       </div>
     </MyLayout>
   )
