@@ -47,7 +47,7 @@ const MyLayout: React.FC<MyLayoutProps> = ({ children, title }) => {
       <BackG className="flex flex-col w-full min-h-screen justify-between">
         <Header />
         <main className="container mx-auto flex-grow ">{children}</main>
-        <Footer />
+        {/* <Footer /> */}
       </BackG>
     </>
   )
