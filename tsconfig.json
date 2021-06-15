@@ -26,6 +26,18 @@
     "types": [
       "jest"
     ],
+     "paths": {
+      "@components/*": [
+        "components/*"
+      ],
+      "@features/*": [
+        "features/*"
+      ],
+      "@wrappers/*": [
+        "wrappers/*"
+      ],
+     
+    }
   },
   "exclude": [
     "node_modules",

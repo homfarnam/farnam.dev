@@ -11,6 +11,12 @@ module.exports = withBabelMinify({
   },
 })
 
+module.exports = {
+  images: {
+    domains: ["nextjs.org"],
+  },
+}
+
 module.exports = withCSS(
   {
     env: {

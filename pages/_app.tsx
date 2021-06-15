@@ -1,7 +1,11 @@
+import "tailwindcss/tailwind.css"
+
 import "../styles/index.css"
+import "../public/fonts/pilat/stylesheet.css"
 import { ApolloProvider } from "@apollo/react-hooks"
 import withData from "../utils/apollo"
 import Head from "next/head"
+import { NextWebVitalsMetric } from "next/app"
 
 function MyApp({ Component, pageProps, apollo }: any) {
   return (
@@ -18,6 +22,10 @@ function MyApp({ Component, pageProps, apollo }: any) {
       </ApolloProvider>
     </>
   )
+}
+
+export function reportWebVitals(metric: NextWebVitalsMetric) {
+  console.log("metric: ", metric)
 }
 
 // Wraps all components in the tree with the data provider

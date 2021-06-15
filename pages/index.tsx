@@ -12,7 +12,7 @@ export default function Home() {
     <MyLayout title="Farnam Homayounfar">
       <Hero className="pt-16" />
       {/* Blog */}
-      <Title className="mt-10 ml-20 sm:ml-10">Blog</Title>
+      <Title className="mt-10 ml-20 sm:ml-10 font-custom">Blog</Title>
 
       <div className="flex flex-col flex-wrap md:flex-no-wrap justify-center items-center md:flex-row">
         {/* <Card className="my-10" /> */}
