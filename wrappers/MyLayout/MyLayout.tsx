@@ -1,10 +1,17 @@
 import Head from "next/head"
 import * as React from "react"
 import { Header, Footer } from "features"
+import styled from "styled-components"
 
 interface MyLayoutProps {
   title?: string
 }
+
+const BackG = styled.div`
+  background-image: url("/union.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+`
 
 const MyLayout: React.FC<MyLayoutProps> = ({ children, title }) => {
   return (
@@ -37,11 +44,11 @@ const MyLayout: React.FC<MyLayoutProps> = ({ children, title }) => {
         <meta property="og:description" content="Frontend developer" />
         <meta name="Description" content="Frontend developer" />
       </Head>
-      <div className="flex flex-col min-h-screen justify-between bg-backbody-100">
+      <BackG className="flex flex-col w-full min-h-screen justify-between">
         <Header />
-        <main className="container mx-auto flex-grow">{children}</main>
+        <main className="container mx-auto flex-grow ">{children}</main>
         <Footer />
-      </div>
+      </BackG>
     </>
   )
 }
