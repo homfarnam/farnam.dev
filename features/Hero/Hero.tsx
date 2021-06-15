@@ -7,8 +7,6 @@ const GlassCard = styled.div`
   position: absolute;
   width: 320px;
   height: 448px;
-  left: 975px;
-  top: 234px;
 
   background: linear-gradient(
     152.97deg,
@@ -41,8 +39,8 @@ const Hero: React.FC<HeroProps> = ({ className = "" }) => {
           objectFit="cover"
           alt="sphere"
         />
-        <div className="z-10 flex flex-row w-screen lg:w-auto items-start justify-start ">
-          <div className="flex flex-row justify-between ml-5 px-3 w-full ">
+        <div className="z-10 flex flex-row   xl:w-auto items-center justify-center ">
+          <div className="flex flex-row flex-wrap space-y-48 xl:space-y-0 lg:mb-0 justify-center items-center xl:justify-between m-auto lg:ml-5 lg:px-3 w-full">
             <div className="mt-2 flex-col text-white text-4xl w-1/2 space-y-5">
               <p className="leading-10 font-normal font-pilat">
                 Well, it it new era and for success in it, you need new era’s
@@ -53,39 +51,41 @@ const Hero: React.FC<HeroProps> = ({ className = "" }) => {
               </p>
               <Button variant="black">See more </Button>
             </div>
-            <div className="z-0">
-              <Image
-                src="/Sphere_gold.svg"
-                className="z-30"
-                layout="fixed"
-                width={338}
-                height={338}
-                objectFit="cover"
-                alt="sphere-gold"
-              />
-            </div>
-            <GlassCard className="z-20  ml-[200px] -mt-32">
-              <Code className="z-50 relative right-52 -top-28">
+            <div className="flex justify-center ">
+              <div className="z-0">
                 <Image
-                  src={codehtml}
+                  src="/Sphere_gold.svg"
                   className="z-30"
                   layout="fixed"
-                  width={720}
-                  height={720}
+                  width={338}
+                  height={338}
                   objectFit="cover"
-                  alt="codehtml"
+                  alt="sphere-gold"
                 />
-              </Code>
-            </GlassCard>
-            <div className="relative -top-56">
-              <Image
-                src="/Color-Black-Matte.svg"
-                layout="fixed"
-                width={186}
-                height={186}
-                objectFit="cover"
-                alt="Color-Black-Matte"
-              />
+              </div>
+              <GlassCard className="z-20 -mt-32">
+                <Code className="z-50 relative right-52 -top-28">
+                  <Image
+                    src={codehtml}
+                    className="z-30"
+                    layout="fixed"
+                    width={600}
+                    height={600}
+                    objectFit="cover"
+                    alt="codehtml"
+                  />
+                </Code>
+              </GlassCard>
+              <div className="relative -top-56">
+                <Image
+                  src="/Color-Black-Matte.svg"
+                  layout="fixed"
+                  width={186}
+                  height={186}
+                  objectFit="cover"
+                  alt="Color-Black-Matte"
+                />
+              </div>
             </div>
           </div>
         </div>
