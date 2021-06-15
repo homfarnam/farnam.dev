@@ -39,6 +39,7 @@ const Hero: React.FC<HeroProps> = ({ className = "" }) => {
           width={186}
           height={186}
           objectFit="cover"
+          alt="sphere"
         />
         <div className="z-10 flex flex-row w-screen lg:w-auto items-start justify-start ">
           <div className="flex flex-row justify-between ml-5 px-3 w-full ">
@@ -60,6 +61,7 @@ const Hero: React.FC<HeroProps> = ({ className = "" }) => {
                 width={338}
                 height={338}
                 objectFit="cover"
+                alt="sphere-gold"
               />
             </div>
             <GlassCard className="z-20  ml-[200px] -mt-32">
@@ -71,6 +73,7 @@ const Hero: React.FC<HeroProps> = ({ className = "" }) => {
                   width={720}
                   height={720}
                   objectFit="cover"
+                  alt="codehtml"
                 />
               </Code>
             </GlassCard>
@@ -81,6 +84,7 @@ const Hero: React.FC<HeroProps> = ({ className = "" }) => {
                 width={186}
                 height={186}
                 objectFit="cover"
+                alt="Color-Black-Matte"
               />
             </div>
           </div>
