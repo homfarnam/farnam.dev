@@ -5,13 +5,13 @@ interface Button
     React.ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
   > {
-  variant?: "black" | "white" | string
+  variant?: "black" | "white" | string | any
   noPaddings?: boolean
   fontSize?: string
 }
 
 const Button: React.FC<Button> = ({
-  variant = "black",
+  variant = "",
   className = "",
   fontSize,
   noPaddings = false,
@@ -23,7 +23,11 @@ const Button: React.FC<Button> = ({
       disabled={disabled}
       className={`rounded-full font-bold sm:leading-9
        ${fontSize ? fontSize : "text-lg"} ${noPaddings ? "" : "py-3 px-8"} ${
-        variant === "black" ? "bg-black" : "bg-white"
+        variant === "black"
+          ? "bg-black"
+          : variant === "white"
+          ? "bg-white"
+          : null
       } ${variant === "black" ? "text-white" : "text-black"} ${
         disabled ? "opacity-50" : ""
       } ${className}`}
