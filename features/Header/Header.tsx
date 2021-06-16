@@ -55,8 +55,8 @@ const Header: React.FC<HeaderProps> = () => {
         <nav>
           <ul className="lg:flex items-center justify-between text-base font-mine text-white pt-4 lg:pt-0">
             {links.map((link) => (
-              <li>
-                <Link key={link.text} href={link.href}>
+              <li key={link.text}>
+                <Link href={link.href} passHref>
                   <MyMenuLink className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400 ">
                     {link.text}
                   </MyMenuLink>
