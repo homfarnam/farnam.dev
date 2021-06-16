@@ -1,5 +1,5 @@
 import { MyLayout } from "wrappers"
-import { Title } from "components"
+import { Title, MyInfo } from "components"
 // import Query from "queries/query"
 // import getArticles from "../apollo/queries/article/articles"
 // import Articles from "../components/Articles/Articles"
@@ -13,7 +13,7 @@ export default function Home() {
       <Hero className="pt-16" />
       {/* Blog */}
       <Title className="mt-10 ml-20 sm:ml-10 font-custom">Blog</Title>
-
+      <MyInfo />
       <div className="flex flex-col flex-wrap md:flex-no-wrap justify-center items-center md:flex-row">
         {/* <Card className="my-10" /> */}
         {/* <Query query={getArticles}>
