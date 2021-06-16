@@ -49,7 +49,11 @@ const Hero: React.FC<HeroProps> = ({ className = "" }) => {
               <p className="font-thin font-apparel">
                 Feel Free To get in touch and see my work
               </p>
-              <Button variant="black">See more </Button>
+              <div className="w-full flex justify-start">
+                <Button className="bg-[#FFB703] mt-5 font-custom font-bold">
+                  See my works
+                </Button>
+              </div>
             </div>
             <div className="flex justify-center ">
               <div className="z-0">
