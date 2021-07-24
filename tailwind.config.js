@@ -15,6 +15,7 @@ module.exports = {
       custom: ["Titillium Web", "sans-serif"],
       apparel: ["Apparel", "sans-serif"],
       pilat: ["Pilat Extended", "sans-serif"],
+      Montserrat_Alternate: ["Montserrat Alternates", "sans-serif"],
       sans: [
         "-apple-system",
         "BlinkMacSystemFont",
