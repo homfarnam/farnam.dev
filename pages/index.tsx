@@ -1,5 +1,5 @@
 import { MyLayout } from "wrappers"
-import { Title, MyInfo } from "components"
+import { MyInfo } from "components"
 // import Query from "queries/query"
 // import getArticles from "../apollo/queries/article/articles"
 // import Articles from "../components/Articles/Articles"
