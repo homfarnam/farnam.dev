@@ -1,6 +1,6 @@
 import Head from "next/head"
 import * as React from "react"
-import { Header } from "features"
+import { Header, Footer } from "features"
 import styled from "styled-components"
 
 interface MyLayoutProps {
