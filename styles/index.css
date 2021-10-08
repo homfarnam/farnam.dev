@@ -106,8 +106,8 @@
   width: 91.666667%;
   /* margin-left: 1.25rem; */
   /* margin-right: 1.25rem; */
-  padding-left: 7rem /* 112px */;
-  padding-right: 7rem /* 112px */;
+  padding-left: 2rem /* 112px */;
+  padding-right: 2rem /* 112px */;
   padding-top: 1.75rem /* 28px */;
   padding-bottom: 1.75rem /* 28px */;
   height: auto;
@@ -129,5 +129,7 @@
   @media (min-width: 768px) {
     margin-left: 0px;
     margin-right: 0px;
+    padding-left: 7rem /* 112px */;
+    padding-right: 7rem /* 112px */;
   }
 }
