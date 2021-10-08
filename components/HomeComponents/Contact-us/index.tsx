@@ -85,7 +85,7 @@ const ContactUs: React.FC = () => {
         </div>
         <ContactUsSection className="contact-us">
           <div className="space-y-4 mt-10 w-full">
-            <div className="flex items-center w-1/2 name-input">
+            <div className="flex items-center w-full lg:w-1/2 name-input">
               <label
                 htmlFor="name"
                 className="italic absolute text-white font-semibold"
@@ -94,7 +94,7 @@ const ContactUs: React.FC = () => {
               </label>
               <input type="text" className="pl-14 py-2 text-white w-full" />
             </div>
-            <div className="flex items-center w-1/2 name-input">
+            <div className="flex items-center w-full lg:w-1/2 name-input">
               <label
                 htmlFor="name"
                 className="italic absolute text-white font-semibold"
@@ -103,7 +103,7 @@ const ContactUs: React.FC = () => {
               </label>
               <input type="text" className="pl-14 py-2 text-white w-full" />
             </div>
-            <div className="flex items-start w-1/2 name-input">
+            <div className="flex items-start w-full lg:w-1/2 name-input">
               <label
                 htmlFor="name"
                 className="italic absolute text-white font-semibold"
