@@ -16,6 +16,15 @@ const Mydiv = styled.div`
   /* Note: backdrop-filter has minimal browser support */
 
   border-radius: 16px;
+
+  border: 1px solid;
+  border-image-slice: 1;
+
+  border-image-source: radial-gradient(
+    69.43% 69.43% at 50% 50%,
+    #000000 0%,
+    rgb(255 255 255 / 14%) 100%
+  );
 `
 
 interface MeProps {}
