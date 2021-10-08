@@ -36,20 +36,20 @@ const MyInfo: React.FC<MeProps> = () => {
         <Mydiv className="w-9/12 flex flex-col md:flex-row justify-between h-auto z-10 relative -right-24">
           <Image src={Farnam} alt="farnam" className="p-3" />
 
-          <div className="flex flex-col w-full p-2 lg:p-3 space-y-4 font-Montserrat_Alternate">
+          <div className="flex flex-col w-full p-2 lg:p-3 space-y-4 font-custom">
             <p className="font-semibold  text-base xl:text-4xl">
-              Hey. my name is Farnam. I live in Iran and tbh, my main interest
-              is not just develop stufs.
+              Hey. My Name Is Farnam. I Live In Iran And Tbh, My Main Interest
+              Is Not Just Develop Stufs.
             </p>
             <p className="font-normal text-base  xl:text-4xl">
-              I totally understand, you may want to work with just a programmer
-              who know to build your code. but lets take another look! Wouldnt
-              it better to work with a programmer who has sense of Art?
+              I Totally Understand, You May Want To Work With Just A Programmer
+              Who Know To Build Your Code. But Lets Take Another Look! Wouldnt
+              It Better To Work With A Programmer Who Has Sense Of Art?
             </p>
             <p className="font-normal text-base  xl:text-4xl">
-              Well as you can see, i play violin. i think when things are messed
-              up, it helps me to calm and write your code more perfect than
-              ever. you see? i play the codes. not just write them.
+              Well As You Can See, I Play Violin. I Think When Things Are Messed
+              Up, It Helps Me To Calm And Write Your Code More Perfect Than
+              Ever. You See? I Play The Codes. Not Just Write Them.
             </p>
           </div>
         </Mydiv>
