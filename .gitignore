@@ -35,3 +35,5 @@ yarn.lock
 # vercel
 .vercel
 .vscode
+.yarn
+__generated__
