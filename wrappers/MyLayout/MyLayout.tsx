@@ -45,8 +45,10 @@ const MyLayout: React.FC<MyLayoutProps> = ({ children, title }) => {
         <meta name="Description" content="Frontend developer" />
       </Head>
       <BackG className="flex flex-col w-full min-h-screen justify-between">
-        <Header />
-        <main className="container mx-auto flex-grow ">{children}</main>
+        <main className="container mx-auto flex-grow ">
+          <Header />
+          {children}
+        </main>
         {/* <Footer /> */}
       </BackG>
     </>
