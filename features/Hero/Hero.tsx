@@ -41,7 +41,7 @@ const Hero: React.FC<HeroProps> = ({ className = "" }) => {
         />
         <div className="z-10 flex flex-row   xl:w-auto items-center justify-center ">
           <div className="flex flex-row flex-wrap space-y-48 xl:space-y-0 lg:mb-0 justify-center items-center xl:justify-between m-auto lg:ml-5 lg:px-3 w-full">
-            <div className="mt-2 flex-col text-white text-4xl w-1/2 space-y-5">
+            <div className="mt-2 flex-col text-white text-4xl w-full md:w-1/2 space-y-5">
               <p className="leading-10 font-normal font-pilat">
                 Well, it it new era and for success in it, you need new era’s
                 developer. thats who am i.
@@ -55,7 +55,7 @@ const Hero: React.FC<HeroProps> = ({ className = "" }) => {
                 </Button>
               </div>
             </div>
-            <div className="flex justify-center ">
+            <div className="hidden md:flex justify-center px-10 lg:p-0 transform scale-75 md:scale-100">
               <div className="z-0">
                 <Image
                   src="/Sphere_gold.svg"
