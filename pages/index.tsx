@@ -11,7 +11,6 @@ export default function Home() {
   return (
     <MyLayout title="Homepage">
       <Hero className="pt-16" />
-      {/* Blog */}
       <MyInfo />
 
       <TechCards />
