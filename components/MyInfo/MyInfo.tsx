@@ -32,21 +32,21 @@ interface MeProps {}
 const MyInfo: React.FC<MeProps> = () => {
   return (
     <>
-      <div className="w-full flex h-auto justify-center mx-auto my-10">
-        <Mydiv className="w-9/12 flex flex-col md:flex-row justify-between h-auto z-10 relative -right-24">
-          <Image src={Farnam} alt="farnam" className="p-3" />
+      <div className="myinfo">
+        <Mydiv className="relative z-10 flex flex-col justify-between w-8/12 h-auto mx-auto md:w-9/12 md:flex-row md:-right-24">
+          <Image src={Farnam} alt="farnam" className="p-3" objectFit="fill" />
 
-          <div className="flex flex-col w-full p-2 lg:p-3 space-y-4 font-custom">
-            <p className="font-semibold  text-base xl:text-4xl">
+          <div className="flex flex-col w-full p-2 space-y-4 lg:p-3 font-custom">
+            <p className="text-base font-semibold xl:text-4xl">
               Hey. My Name Is Farnam. I Live In Iran And Tbh, My Main Interest
               Is Not Just Develop Stufs.
             </p>
-            <p className="font-normal text-base  xl:text-4xl">
+            <p className="text-base font-normal xl:text-4xl">
               I Totally Understand, You May Want To Work With Just A Programmer
               Who Know To Build Your Code. But Lets Take Another Look! Wouldnt
               It Better To Work With A Programmer Who Has Sense Of Art?
             </p>
-            <p className="font-normal text-base  xl:text-4xl">
+            <p className="text-base font-normal xl:text-4xl">
               Well As You Can See, I Play Violin. I Think When Things Are Messed
               Up, It Helps Me To Calm And Write Your Code More Perfect Than
               Ever. You See? I Play The Codes. Not Just Write Them.
@@ -54,7 +54,7 @@ const MyInfo: React.FC<MeProps> = () => {
           </div>
         </Mydiv>
         <div className="relative -left-16">
-          <Image src={Round} alt="Round" className="z-0 relative -left-8" />
+          <Image src={Round} alt="Round" className="relative z-0 -left-8" />
         </div>
       </div>
     </>
