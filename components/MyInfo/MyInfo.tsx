@@ -33,7 +33,7 @@ const MyInfo: React.FC<MeProps> = () => {
   return (
     <>
       <div className="myinfo">
-        <Mydiv className="relative z-10 flex flex-col justify-between w-8/12 h-auto mx-auto md:w-9/12 md:flex-row md:-right-24">
+        <Mydiv className="myinfo__box">
           <Image src={Farnam} alt="farnam" className="p-3" objectFit="fill" />
 
           <div className="flex flex-col w-full p-2 space-y-4 lg:p-3 font-custom">
