@@ -50,11 +50,11 @@ export default function ContactMe() {
   return (
     <MyLayout title="Contact Me">
       <div className="py-10">
-        <Title className="flex justify-center">Contact with Me</Title>
+        <Title className="flex justify-center text-6xl">Contact with Me</Title>
         <Formik initialValues={initialValues} onSubmit={onSubmit}>
-          <Form id="login-form" className="space-y-4 flex flex-wrap">
+          <Form id="login-form" className="flex flex-wrap space-y-4">
             <div className="w-full pb-10">
-              <div className="flex mb-9 flex-col justify-center mx-auto  flex-wrap lg:flex-no-wrap w-6/12 h-13">
+              <div className="flex flex-col flex-wrap justify-center w-6/12 mx-auto mb-9 lg:flex-no-wrap h-13">
                 <TextInput
                   name="Firstname"
                   placeholder="First Name"
@@ -79,7 +79,7 @@ export default function ContactMe() {
                 <MyButton
                   id="submit-button"
                   type="submit"
-                  className="w-full mt-24 lg:mt-10 text-white"
+                  className="w-full mt-24 text-white lg:mt-10"
                 >
                   Contact Us
                 </MyButton>

@@ -4,8 +4,8 @@ import { Title } from "components"
 export default function AboutMe() {
   return (
     <MyLayout title="About Me">
-      <Title className="flex justify-center py-10">About Me</Title>
-      <div className="w-6/12 mx-auto text-2xl py-5">
+      <Title className="flex justify-center py-10 text-6xl">About Me</Title>
+      <div className="w-6/12 py-5 mx-auto text-2xl">
         <p>
           I am Farnam Homayounfar, I'm 23 and I am a Frontend developer for 5
           years.
