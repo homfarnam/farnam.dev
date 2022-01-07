@@ -6,7 +6,7 @@ import "../public/fonts/pilat/stylesheet.css"
 import { ApolloProvider } from "@apollo/react-hooks"
 import { useApollo } from "../utils/apollo"
 import Head from "next/head"
-import { NextWebVitalsMetric } from "next/app"
+// import { NextWebVitalsMetric } from "next/app"
 
 // @graphql-codegen/typescript-react-apollo@1.17.8
 
