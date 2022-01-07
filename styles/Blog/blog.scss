@@ -9,7 +9,7 @@
       @apply flex justify-start w-full mt-5;
 
       &__card {
-        @apply mx-10 text-white relative;
+        @apply mx-10 text-white relative cursor-pointer;
 
         &__data {
           @apply relative flex items-center w-full space-x-3 -top-20;
