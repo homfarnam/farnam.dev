@@ -1,22 +1,24 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import Image from "next/image"
-import ScrollContainer from "react-indiana-drag-scroll"
 import { GetStaticProps } from "next"
 import { getApolloClient } from "utils/apollo"
-import { Button, Title, Glasscard } from "components"
+import { Title } from "components"
 import { MyLayout } from "wrappers"
 import { getArticles } from "../../graphql/Queries"
 import { Articles_articles } from "graphql/Queries/__generated__/Articles"
 import Categories from "@components/Blog/Categories/Categories"
+import Details from "@components/Blog/Details/Details"
 
 interface Blog {
   data: Articles_articles[]
 }
 
 const Blog: React.FC<Blog> = ({ data }) => {
+  const [postId, setPostId] = useState<string | number>(1)
+
   useEffect(() => {
-    console.log("data: ", data)
-  }, [data])
+    console.log("postId: ", postId)
+  }, [postId])
 
   return (
     <MyLayout>
@@ -33,7 +35,13 @@ const Blog: React.FC<Blog> = ({ data }) => {
         </div>
         <div className="blog__cards">
           <Title className="text-5xl text-white">The Blog </Title>
-          <Categories data={data} />
+          <Categories
+            data={data}
+            selectedPost={(id: string | number) => {
+              setPostId(id)
+            }}
+          />
+          <Details postId={postId} />
         </div>
       </div>
     </MyLayout>
