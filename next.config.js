@@ -13,7 +13,7 @@ module.exports = withBabelMinify({
 
 module.exports = {
   images: {
-    domains: ["nextjs.org"],
+    domains: ["nextjs.org", "farnamh.ir"],
   },
 }
 
