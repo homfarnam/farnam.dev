@@ -1,17 +1,27 @@
-import * as React from "react"
-import { Title } from "components"
-import { MyLayout } from "wrappers"
-import Round from "../../public/RoundCube-White-Matte.svg"
+import { useEffect } from "react"
 import Image from "next/image"
-import Glasscard from "@components/Glasscard/Glasscard"
+import ScrollContainer from "react-indiana-drag-scroll"
+import { GetStaticProps } from "next"
+import { getApolloClient } from "utils/apollo"
+import { Button, Title, Glasscard } from "components"
+import { MyLayout } from "wrappers"
+import { getArticles } from "../../graphql/Queries"
+import { Articles_articles } from "graphql/Queries/__generated__/Articles"
+import Categories from "@components/Blog/Categories/Categories"
 
-interface Blog {}
+interface Blog {
+  data: Articles_articles[]
+}
 
-const Blog: React.FC<Blog> = () => {
+const Blog: React.FC<Blog> = ({ data }) => {
+  useEffect(() => {
+    console.log("data: ", data)
+  }, [data])
+
   return (
     <MyLayout>
-      <div className="container">
-        <div className="">
+      <div className="container blog">
+        <div className="blog__circle">
           <Image
             src="/sphere.svg"
             layout="fixed"
@@ -21,9 +31,9 @@ const Blog: React.FC<Blog> = () => {
             alt="sphere"
           />
         </div>
-        <Title className="text-5xl text-white">The Blog </Title>
-        <div className="w-full">
-          <Glasscard />
+        <div className="blog__cards">
+          <Title className="text-5xl text-white">The Blog </Title>
+          <Categories data={data} />
         </div>
       </div>
     </MyLayout>
@@ -31,3 +41,19 @@ const Blog: React.FC<Blog> = () => {
 }
 
 export default Blog
+
+export const getStaticProps: GetStaticProps = async () => {
+  const apolloClient = getApolloClient({})
+
+  const {
+    data: { articles },
+  } = await apolloClient.query({
+    query: getArticles,
+  })
+
+  return {
+    props: {
+      data: articles,
+    },
+  }
+}
