@@ -1,19 +1,27 @@
 import Head from "next/head"
-import * as React from "react"
 import { Header } from "features"
 import styled from "styled-components"
+import { HTMLAttributes } from "react"
 
 interface MyLayoutProps {
   title?: string
+  noBg?: boolean
+  children: React.ReactNode
+  className?: HTMLAttributes<HTMLDivElement>["className"]
 }
 
-const BackG = styled.div`
-  background-image: url("/union.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-`
+const MyLayout: React.FC<MyLayoutProps> = ({
+  children,
+  title,
+  noBg,
+  className = "",
+}) => {
+  const BackG = styled.div`
+    background-image: ${(props) => (noBg ? "" : 'url("/union.png")')};
+    background-repeat: no-repeat;
+    background-size: cover;
+  `
 
-const MyLayout: React.FC<MyLayoutProps> = ({ children, title }) => {
   return (
     <>
       <Head>
@@ -44,8 +52,8 @@ const MyLayout: React.FC<MyLayoutProps> = ({ children, title }) => {
         <meta property="og:description" content="Frontend developer" />
         <meta name="Description" content="Frontend developer" />
       </Head>
-      <BackG className="flex flex-col w-full min-h-screen justify-between">
-        <main className="container mx-auto flex-grow ">
+      <BackG className={`flex flex-col justify-between w-full min-h-screen`}>
+        <main className={`${className}`}>
           <Header />
           {children}
         </main>
