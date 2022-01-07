@@ -17,7 +17,7 @@ const MyLayout: React.FC<MyLayoutProps> = ({
   className = "",
 }) => {
   const BackG = styled.div`
-    background-image: ${(props) => (noBg ? "" : 'url("/union.png")')};
+    background-image: ${(_props) => (noBg ? "" : 'url("/union.png")')};
     background-repeat: no-repeat;
     background-size: cover;
   `
