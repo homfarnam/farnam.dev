@@ -18,23 +18,23 @@ interface HeaderProps {}
 
 const links = [
   { href: routes.root.href, text: "Home" },
-  { href: routes.aboutMe.href, text: "About Me" },
+  // { href: routes.aboutMe.href, text: "About Me" },
   { href: routes.blog.href, text: "Blog" },
-  { href: routes.blog.href, text: "Portfolio" },
-  { href: routes.blog.href, text: "Resume" },
-  { href: routes.contactMe.href, text: "Get In Touch" },
+  // { href: routes.blog.href, text: "Portfolio" },
+  { href: routes.resume.href, text: "Resume" },
+  // { href: routes.contactMe.href, text: "Get In Touch" },
 ]
 
 const Header: React.FC<HeaderProps> = () => {
   return (
-    <MyHeader className="lg:px-16 px-6 flex flex-wrap justify-start items-center lg:py-0 py-2">
+    <MyHeader className="flex flex-wrap items-center justify-start px-6 py-2 lg:px-16 lg:py-0">
       <div className="flex justify-self-auto">
         <label
           htmlFor="menu-toggle"
-          className="cursor-pointer lg:hidden block mt-2"
+          className="block mt-2 cursor-pointer lg:hidden"
         >
           <svg
-            className="fill-current text-gray-900"
+            className="text-gray-900 fill-current"
             xmlns="http://www.w3.org/2000/svg"
             width="20"
             height="20"
@@ -49,15 +49,15 @@ const Header: React.FC<HeaderProps> = () => {
       </div>
 
       <div
-        className="hidden lg:flex lg:items-center lg:w-auto w-full"
+        className="hidden w-full lg:flex lg:items-center lg:w-auto"
         id="menu"
       >
         <nav>
-          <ul className="lg:flex items-center justify-between text-base font-mine text-white pt-4 lg:pt-0">
+          <ul className="items-center justify-between pt-4 text-base text-white lg:flex font-mine lg:pt-0">
             {links.map((link) => (
               <li key={link.text}>
                 <Link href={link.href} passHref>
-                  <MyMenuLink className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400 ">
+                  <MyMenuLink className="block px-0 py-3 border-b-2 border-transparent lg:p-4 hover:border-indigo-400 ">
                     {link.text}
                   </MyMenuLink>
                 </Link>
