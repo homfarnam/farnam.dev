@@ -8,29 +8,29 @@
 // ====================================================
 
 export interface Category_category_articles_category {
-  __typename: "Category"
-  id: string
-  name: string | null
+  __typename: "Category";
+  id: string;
+  name: string;
 }
 
 export interface Category_category_articles {
-  __typename: "Articles"
-  id: string
-  title: string | null
-  description: string | null
-  category: Category_category_articles_category | null
+  __typename: "Article";
+  id: string;
+  title: string;
+  description: string;
+  category: Category_category_articles_category | null;
 }
 
 export interface Category_category {
-  __typename: "Category"
-  name: string | null
-  articles: (Category_category_articles | null)[] | null
+  __typename: "Category";
+  name: string;
+  articles: (Category_category_articles | null)[] | null;
 }
 
 export interface Category {
-  category: Category_category | null
+  category: Category_category | null;
 }
 
 export interface CategoryVariables {
-  id: string
+  id: string;
 }

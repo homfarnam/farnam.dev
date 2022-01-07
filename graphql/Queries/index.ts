@@ -10,6 +10,13 @@ export const getArticle = gql`
         id
         name
       }
+      image {
+        id
+        alternativeText
+        url
+        width
+        height
+      }
       published_at
     }
   }
@@ -25,6 +32,13 @@ export const getArticles = gql`
         id
         name
       }
+      image {
+        id
+        alternativeText
+        url
+        width
+        height
+      }
       published_at
     }
   }
@@ -34,6 +48,14 @@ export const getCategories = gql`
     categories {
       id
       name
+      image {
+        id
+        name
+        url
+        width
+        height
+        alternativeText
+      }
     }
   }
 `

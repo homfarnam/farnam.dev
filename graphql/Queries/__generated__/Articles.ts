@@ -8,20 +8,30 @@
 // ====================================================
 
 export interface Articles_articles_category {
-  __typename: "Category"
-  id: string
-  name: string | null
+  __typename: "Category";
+  id: string;
+  name: string;
+}
+
+export interface Articles_articles_image {
+  __typename: "UploadFile";
+  id: string;
+  alternativeText: string | null;
+  url: string;
+  width: number | null;
+  height: number | null;
 }
 
 export interface Articles_articles {
-  __typename: "Articles"
-  id: string
-  title: string | null
-  description: string | null
-  category: Articles_articles_category | null
-  published_at: any
+  __typename: "Article";
+  id: string;
+  title: string;
+  description: string;
+  category: Articles_articles_category | null;
+  image: Articles_articles_image | null;
+  published_at: any | null;
 }
 
 export interface Articles {
-  articles: (Articles_articles | null)[] | null
+  articles: (Articles_articles | null)[] | null;
 }
