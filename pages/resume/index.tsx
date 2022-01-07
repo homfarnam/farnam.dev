@@ -1,11 +1,8 @@
-import { useEffect, useState } from "react"
 import Image from "next/image"
-import { GetStaticProps } from "next"
-import { getApolloClient } from "utils/apollo"
-import { Title } from "components"
+
 import { MyLayout } from "wrappers"
 import { Articles_articles } from "graphql/Queries/__generated__/Articles"
-import styled from "styled-components"
+// import styled from "styled-components"
 import FHImage from "../../public/fh.png"
 import useWindowSize from "hooks/useWindowSize"
 
@@ -13,15 +10,15 @@ interface Blog {
   data: Articles_articles[]
 }
 
-const FH = styled.div`
-  background-image: url("/fh.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  object-fit: contain;
+// const FH = styled.div`
+//   background-image: url("/fh.png");
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   object-fit: contain;
 
-  height: 100vh;
-  width: 50%;
-`
+//   height: 100vh;
+//   width: 50%;
+// `
 
 const Resume: React.FC<Blog> = () => {
   const size = useWindowSize()
