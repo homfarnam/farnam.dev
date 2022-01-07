@@ -21,7 +21,7 @@ const Blog: React.FC<Blog> = ({ data }) => {
   }, [postId])
 
   return (
-    <MyLayout>
+    <MyLayout className="container flex-grow mx-auto" title="blog">
       <div className="container blog">
         <div className="blog__circle">
           <Image
