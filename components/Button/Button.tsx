@@ -7,6 +7,7 @@ interface Button
   > {
   variant?: "black" | "white" | string | any
   noPaddings?: boolean
+  roundFull?: boolean
   fontSize?: string
 }
 
@@ -15,13 +16,14 @@ const Button: React.FC<Button> = ({
   className = "",
   fontSize,
   noPaddings = false,
+  roundFull = false,
   disabled,
   ...rest
 }) => {
   return (
     <button
       disabled={disabled}
-      className={`rounded-full font-bold sm:leading-9
+      className={`${roundFull ? "" : "rounded-full"}font-bold sm:leading-9
        ${fontSize ? fontSize : "text-lg"} ${noPaddings ? "" : "py-3 px-8"} ${
         variant === "black"
           ? "bg-black"
