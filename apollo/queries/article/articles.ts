@@ -10,6 +10,13 @@ export const getArticles = gql`
         id
         name
       }
+      image {
+        id
+        alternativeText
+        url
+        width
+        height
+      }
     }
   }
 `
