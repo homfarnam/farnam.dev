@@ -1,3 +1,4 @@
+import { HTMLAttributes } from "react"
 import styled from "styled-components"
 
 const GlassDiv = styled.div`
@@ -15,7 +16,8 @@ const GlassDiv = styled.div`
 
   border-radius: 16px;
 
-  border: 1px solid;
+  /* border: 1px solid; */
+
   border-image-slice: 1;
 
   border-image-source: radial-gradient(
@@ -25,14 +27,13 @@ const GlassDiv = styled.div`
   );
 `
 
-interface GlasscardProps {}
+interface GlasscardProps {
+  className?: HTMLAttributes<HTMLDivElement>["className"]
+  children?: React.ReactNode
+}
 
-const Glasscard: React.FC<GlasscardProps> = () => {
-  return (
-    <GlassDiv>
-      <div>sds</div>
-    </GlassDiv>
-  )
+const Glasscard: React.FC<GlasscardProps> = ({ className, children }) => {
+  return <GlassDiv className={className}> {children}</GlassDiv>
 }
 
 export default Glasscard
