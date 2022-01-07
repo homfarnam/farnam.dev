@@ -3,7 +3,36 @@ import Image from "next/image"
 import { getArticleWithID } from "graphql/Queries"
 import { useEffect, useState } from "react"
 import { Article_article } from "graphql/Queries/__generated__/Article"
-import { compareAsc, format } from "date-fns"
+import { format } from "date-fns"
+import styled from "styled-components"
+import Round from "../../../public/RoundCube-White-Matte.svg"
+import useWindowSize from "hooks/useWindowSize"
+
+const GlassDiv = styled.div`
+  position: relative;
+
+  background: linear-gradient(
+    152.97deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  width: 100%;
+  height: 882px;
+  backdrop-filter: blur(42px);
+  /* Note: backdrop-filter has minimal browser support */
+
+  border-radius: 16px;
+
+  /* border: 1px solid; */
+
+  border-image-slice: 1;
+
+  border-image-source: radial-gradient(
+    69.43% 69.43% at 50% 50%,
+    #000000 0%,
+    rgb(255 255 255 / 14%) 100%
+  );
+`
 
 interface DetailsProps {
   postId: string | number
@@ -20,6 +49,8 @@ const Details: React.FC<DetailsProps> = ({ postId }) => {
       id: id,
     },
   })
+
+  const size = useWindowSize()
 
   useEffect(() => {
     if (data) {
@@ -58,7 +89,7 @@ const Details: React.FC<DetailsProps> = ({ postId }) => {
               height={postData.image?.height as number}
             />
           </div>
-          <div>
+          <div className="w-full">
             <h1 className="my-10 text-5xl font-extrabold text-white font-custom">
               {postData.title}
             </h1>
@@ -66,6 +97,15 @@ const Details: React.FC<DetailsProps> = ({ postId }) => {
               {postData?.published_at &&
                 format(new Date(postData?.published_at), "yyyy-MM-dd HH:mm")}
             </span>
+
+            <GlassDiv className="z-10 p-5 my-10 text-2xl text-white md:text-3xl font-apparel">
+              {postData?.description}
+            </GlassDiv>
+            {size > 1042 && (
+              <div className="relative z-0 flex items-center justify-end w-full max-w-full -top-48 ">
+                <Image src={Round} alt="Round" className="" />
+              </div>
+            )}
           </div>
         </div>
       )}
