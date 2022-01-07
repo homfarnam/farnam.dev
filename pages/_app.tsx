@@ -29,9 +29,9 @@ function MyApp({ Component, pageProps }: any) {
   )
 }
 
-export function reportWebVitals(metric: NextWebVitalsMetric) {
-  console.log("metric: ", metric)
-}
+// export function reportWebVitals(metric: NextWebVitalsMetric) {
+//   console.log("metric: ", metric)
+// }
 
 // Wraps all components in the tree with the data provider
 export default MyApp
