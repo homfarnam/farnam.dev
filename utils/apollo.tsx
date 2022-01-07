@@ -15,7 +15,7 @@ export interface GraphQlContext {
 
 let apolloClient: ApolloClient<NormalizedCacheObject> | undefined
 
-function createIsomorphicLink(context: GraphQlContext | undefined) {
+function createIsomorphicLink(_context: GraphQlContext | undefined) {
   /**
    * SSG and SSR
    */
