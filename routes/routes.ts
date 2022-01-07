@@ -19,4 +19,8 @@ export const routes = {
     href: "/blog",
     text: "blog",
   },
+  resume: {
+    href: "/resume",
+    text: "resume",
+  },
 }
