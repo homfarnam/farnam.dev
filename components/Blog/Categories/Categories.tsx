@@ -1,6 +1,6 @@
 import ScrollContainer from "react-indiana-drag-scroll"
 import Image from "next/image"
-import { Button, Title, Glasscard } from "components"
+import { Button, Glasscard } from "components"
 import { Articles_articles } from "graphql/Queries/__generated__/Articles"
 
 interface CategoriesProps {
