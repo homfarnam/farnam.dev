@@ -1,0 +1,32 @@
+.blog {
+  &__circle {
+  }
+
+  &__cards {
+    @apply my-10 space-y-5;
+
+    &--categories {
+      @apply flex justify-start w-full mt-5;
+
+      &__card {
+        @apply mx-10 text-white relative;
+
+        &__data {
+          @apply relative flex items-center w-full space-x-3 -top-20;
+          h3 {
+            @apply font-pilat text-2xl font-medium w-1/2;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+          }
+          button {
+            padding: 10px;
+          }
+        }
+      }
+    }
+  }
+}
