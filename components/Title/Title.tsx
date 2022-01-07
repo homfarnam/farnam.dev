@@ -5,7 +5,7 @@ interface Title {
 }
 
 const Title: React.FC<Title> = ({ className = "", children }) => {
-  return <h2 className={`text-6xl font-black ${className}`}>{children}</h2>
+  return <h2 className={`font-pilat ${className}`}>{children}</h2>
 }
 
 export default Title
