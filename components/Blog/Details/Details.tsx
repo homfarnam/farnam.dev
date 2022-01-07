@@ -74,40 +74,46 @@ const Details: React.FC<DetailsProps> = ({ postId }) => {
 
   return (
     <div>
-      {postData && (
-        <div className="w-full h-full">
-          <div className="w-full h-auto">
-            <Image
-              src={postData.image?.url as any}
-              alt={postData.image?.alternativeText as string}
-              loader={() => {
-                return `${url}${postData.image?.url}`
-              }}
-              layout="responsive"
-              objectFit="contain"
-              width={postData.image?.width as number}
-              height={postData.image?.height as number}
-            />
-          </div>
-          <div className="w-full">
-            <h1 className="my-10 text-5xl font-extrabold text-white font-custom">
-              {postData.title}
-            </h1>
-            <span className="my-10 text-2xl font-bold text-white font-apparel">
-              {postData?.published_at &&
-                format(new Date(postData?.published_at), "yyyy-MM-dd HH:mm")}
-            </span>
+      {error ? (
+        <p>{error}</p>
+      ) : loading ? (
+        "loading"
+      ) : (
+        postData && (
+          <div className="w-full h-full">
+            <div className="w-full h-auto">
+              <Image
+                src={postData.image?.url as any}
+                alt={postData.image?.alternativeText as string}
+                loader={() => {
+                  return `${url}${postData.image?.url}`
+                }}
+                layout="responsive"
+                objectFit="contain"
+                width={postData.image?.width as number}
+                height={postData.image?.height as number}
+              />
+            </div>
+            <div className="w-full">
+              <h1 className="my-10 text-5xl font-extrabold text-white font-custom">
+                {postData.title}
+              </h1>
+              <span className="my-10 text-2xl font-bold text-white font-apparel">
+                {postData?.published_at &&
+                  format(new Date(postData?.published_at), "yyyy-MM-dd HH:mm")}
+              </span>
 
-            <GlassDiv className="z-10 p-5 my-10 text-2xl text-white md:text-3xl font-apparel">
-              {postData?.description}
-            </GlassDiv>
-            {size > 1042 && (
-              <div className="relative z-0 flex items-center justify-end w-full max-w-full -top-48 ">
-                <Image src={Round} alt="Round" className="" />
-              </div>
-            )}
+              <GlassDiv className="z-10 p-5 my-10 text-2xl text-white md:text-3xl font-apparel">
+                {postData?.description}
+              </GlassDiv>
+              {size > 1042 && (
+                <div className="relative z-0 flex items-center justify-end w-full max-w-full -top-48 ">
+                  <Image src={Round} alt="Round" className="" />
+                </div>
+              )}
+            </div>
           </div>
-        </div>
+        )
       )}
     </div>
   )
