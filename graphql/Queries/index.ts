@@ -22,6 +22,28 @@ export const getArticle = gql`
   }
 `
 
+export const getArticleWithID = gql`
+  query ArticleId($id: ID!) {
+    articles(where: { id: $id }) {
+      id
+      title
+      description
+      category {
+        id
+        name
+      }
+      image {
+        id
+        alternativeText
+        url
+        width
+        height
+      }
+      published_at
+    }
+  }
+`
+
 export const getArticles = gql`
   query Articles {
     articles {
