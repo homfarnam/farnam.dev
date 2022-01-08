@@ -1,6 +1,17 @@
 {
-  "extends": "next",
+  "extends": ["next", "plugin:jsx-a11y/recommended"],
   "rules": {
-    "react/no-unescaped-entities": "off"
-  }
- }
+    "react/no-unescaped-entities": "off",
+    "jsx-a11y/alt-text": [
+      3,
+      {
+        "elements": ["img", "object", "area", "input[type=\"image\"]"],
+        "img": ["Image"],
+        "object": ["Object"],
+        "area": ["Area"],
+        "input[type=\"image\"]": ["InputImage"]
+      }
+    ]
+  },
+  "plugins": ["jsx-a11y"]
+}
