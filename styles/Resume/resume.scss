@@ -1,0 +1,104 @@
+.resume {
+  @apply bg-[#08172E] w-screen h-screen;
+
+  &__main {
+    @apply flex flex-col lg:flex-row items-center justify-between w-full space-x-3;
+    height: calc(100vh - 3.7rem);
+
+    &--image {
+      @apply z-50  h-full w-3/4 relative bottom-0 left-0 flex flex-col justify-end items-start;
+    }
+
+    &--me {
+      @apply flex flex-col items-start justify-center w-1/3 h-full text-left text-white;
+      & > div {
+        @apply flex flex-col items-start justify-between;
+        h3 {
+          @apply text-5xl text-white font-pilat w-full;
+          strong {
+            @apply text-[#2563A8];
+          }
+        }
+        & > span {
+          @apply my-10 text-2xl text-white font-custom;
+        }
+      }
+    }
+
+    &--about {
+      @apply flex flex-col items-start px-5 justify-center w-1/4 h-full space-y-5 text-left text-white;
+      span {
+        @apply text-5xl font-pilat;
+      }
+      p {
+        @apply text-2xl leading-normal;
+      }
+    }
+  }
+}
+
+.cvButton {
+  width: 268px;
+  height: 72px;
+  color: #9fbeee;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10.5px);
+  -webkit-backdrop-filter: blur(10.5px);
+  border-radius: 16px;
+  // background: rgba(148, 148, 148, 0.338);
+  background: rgba(255, 255, 255, 0.16);
+
+  font-style: italic;
+  font-size: 1.5rem;
+  opacity: 0.8;
+
+  // background-image: linear-gradient(
+  //   to right,
+  //   rgba(149, 181, 208, 0.256) 10%,
+  //   rgba(0, 136, 255, 0.345) 51%,
+  //   rgba(0, 45, 142, 0.194) 100%
+  // );
+
+  // border: 6.5px solid;
+
+  // border-image-slice: 1;
+
+  // border-image-source: linear-gradient(
+  //   132.43deg,
+  //   rgba(152, 37, 37, 0.24) 0%,
+  //   rgba(187, 64, 64, 0.276) 61.87%
+  // );
+
+  &:hover {
+    background-position: right center;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.591);
+    // margin: 8px 10px 12px;
+  }
+}
+
+.cvButton2 {
+  display: inline-block;
+  padding: 24px 32px;
+  border: 0;
+  text-decoration: none;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 136, 255, 0.345) 10%,
+    rgba(5, 108, 199, 0.372) 51%,
+    rgba(15, 64, 171, 0.194) 100%
+  );
+  opacity: 0.8;
+  font-style: italic;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(30px);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  text-transform: uppercase;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
