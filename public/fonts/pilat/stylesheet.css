@@ -7,7 +7,9 @@
         url('PilatExtended-Bold.woff') format('woff'),
         url('PilatExtended-Bold.ttf') format('truetype');
     font-weight: bold;
-    font-style: normal;
+    font-style: normal;  
+    font-display: swap;
+
 }
 
 @font-face {
@@ -20,6 +22,8 @@
         url('PilatExtended-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
+
 }
 
 @font-face {
@@ -32,6 +36,8 @@
         url('PilatExtended-Thin.ttf') format('truetype');
     font-weight: 100;
     font-style: normal;
+    font-display: swap;
+
 }
 
 @font-face {
@@ -44,6 +50,8 @@
         url('PilatExtended-Heavy.ttf') format('truetype');
     font-weight: 900;
     font-style: normal;
+    font-display: swap;
+
 }
 
 @font-face {
@@ -56,6 +64,8 @@
         url('PilatExtended-Light.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
+    font-display: swap;
+
 }
 
 @font-face {
@@ -68,6 +78,8 @@
         url('PilatExtended-Book.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
+
 }
 
 @font-face {
@@ -80,6 +92,8 @@
         url('PilatExtended-DemiBold.ttf') format('truetype');
     font-weight: 600;
     font-style: normal;
+    font-display: swap;
+
 }
 
 @font-face {
@@ -92,5 +106,7 @@
         url('PilatExtended-Black.ttf') format('truetype');
     font-weight: 900;
     font-style: normal;
+    font-display: swap;
+
 }
 
