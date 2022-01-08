@@ -92,25 +92,33 @@ const ContactUs: React.FC = () => {
               >
                 Name
               </label>
-              <input type="text" className="pl-14 py-2 text-white w-full" />
+              <input
+                type="text"
+                id="name"
+                className="pl-14 py-2 text-white w-full"
+              />
             </div>
             <div className="flex items-center w-full lg:w-1/2 name-input">
               <label
-                htmlFor="name"
+                htmlFor="email"
                 className="italic absolute text-white font-semibold"
               >
                 Email
               </label>
-              <input type="text" className="pl-14 py-2 text-white w-full" />
+              <input
+                type="text"
+                id="email"
+                className="pl-14 py-2 text-white w-full"
+              />
             </div>
             <div className="flex items-start w-full lg:w-1/2 name-input">
               <label
-                htmlFor="name"
+                htmlFor="message"
                 className="italic absolute text-white font-semibold"
               >
                 Message
               </label>
-              <textarea className=" text-white w-full py-7 " />
+              <textarea className=" text-white w-full py-7 " id="message" />
             </div>
           </div>
         </ContactUsSection>
