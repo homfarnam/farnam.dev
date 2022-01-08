@@ -37,6 +37,7 @@ const Hero: React.FC<HeroProps> = ({ className = "" }) => {
           width={186}
           height={186}
           objectFit="cover"
+          loading="lazy"
           alt="sphere"
         />
         <div className="z-10 flex flex-row   xl:w-auto items-center justify-center ">
@@ -64,6 +65,7 @@ const Hero: React.FC<HeroProps> = ({ className = "" }) => {
                   width={338}
                   height={338}
                   objectFit="cover"
+                  loading="lazy"
                   alt="sphere-gold"
                 />
               </div>
@@ -76,6 +78,7 @@ const Hero: React.FC<HeroProps> = ({ className = "" }) => {
                     width={600}
                     height={600}
                     objectFit="cover"
+                    loading="lazy"
                     alt="codehtml"
                   />
                 </Code>
@@ -87,6 +90,7 @@ const Hero: React.FC<HeroProps> = ({ className = "" }) => {
                   width={186}
                   height={186}
                   objectFit="cover"
+                  loading="lazy"
                   alt="Color-Black-Matte"
                 />
               </div>
