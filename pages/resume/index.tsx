@@ -1,10 +1,10 @@
 import Image from "next/image"
 
-import { MyLayout } from "wrappers"
-import { Articles_articles } from "graphql/Queries/__generated__/Articles"
+import { MyLayout } from "../../wrappers"
+import { Articles_articles } from "../../graphql/Queries/__generated__/Articles"
 // import styled from "styled-components"
 import FHImage from "../../public/fh.png"
-import useWindowSize from "hooks/useWindowSize"
+import useWindowSize from "../../hooks/useWindowSize"
 
 interface Blog {
   data: Articles_articles[]

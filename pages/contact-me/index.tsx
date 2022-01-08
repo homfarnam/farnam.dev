@@ -1,6 +1,6 @@
-import { MyLayout } from "wrappers"
+import { MyLayout } from "../../wrappers"
 import { FormikHelpers, Formik, Form } from "formik"
-import { TextInput, Title } from "components"
+import { TextInput, Title } from "../../components"
 import styled from "styled-components"
 
 const MyButton = styled.button`

@@ -1,5 +1,6 @@
-import { MyLayout } from "wrappers"
-import { Title } from "components"
+/* eslint-disable react/no-unescaped-entities */
+import { MyLayout } from "../../wrappers"
+import { Title } from "../../components"
 
 export default function AboutMe() {
   return (
