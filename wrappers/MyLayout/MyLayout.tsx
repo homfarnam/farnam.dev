@@ -25,24 +25,6 @@ const MyLayout: React.FC<MyLayoutProps> = ({
   return (
     <>
       <Head>
-        <link
-          rel="preload"
-          href="../../public/fonts/Syne-Regular.ttf"
-          as="font"
-          crossOrigin=""
-        />
-        <link
-          rel="preload"
-          href="../../public/fonts/Syne-Medium.ttf"
-          as="font"
-          crossOrigin=""
-        />
-        <link
-          rel="preload"
-          href="../../public/fonts/Blacker-Text-Light-trial.ttf"
-          as="font"
-          crossOrigin=""
-        />
         <title key="page-title">{`Farnam Homayounfard - ${title}`}</title>
         <meta
           name="viewport"

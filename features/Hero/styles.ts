@@ -6,7 +6,6 @@ const BackText = styled.p`
   height: 596px;
   right: 389px;
   top: 50px;
-  font-family: Syne;
   font-style: normal;
   font-weight: bold;
   font-size: 497.104px;
@@ -62,7 +61,6 @@ const MyTitle = styled.h1`
   /* font-family: "Pacifico", cursive; */
   /* width: 486px; */
   text-align: left;
-  font-family: "Syne", sans-serif;
   text-transform: capitalize;
   font-style: normal;
   line-height: 40px;

@@ -68,30 +68,6 @@
     U+FEFF, U+FFFD;
 }
 
-/* @font-face {
-  font-family: "Syne";
-  src: url("../public/fonts/Syne-Regular.ttf");
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Syne";
-  src: url("../public/fonts/Syne-Medium.ttf");
-  font-style: medium;
-  font-weight: 500;
-  font-display: swap;
-} */
-
-/* @font-face {
-  font-family: "Blacker";
-  src: url("../public/fonts/Blacker-Text-Light-trial.ttf");
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-} */
-
 /* Apparel */
 
 @font-face {
