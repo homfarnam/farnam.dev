@@ -4,10 +4,7 @@
     "target": "esnext",
     "module": "esnext",
     "jsx": "preserve",
-    "lib": [
-      "dom",
-      "es2017"
-    ],
+    "lib": ["dom", "es2017"],
     "moduleResolution": "node",
     "allowJs": false,
     "noEmit": true,
@@ -23,21 +20,13 @@
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "types": [
-      "jest"
-    ],
-     "paths": {
-      "@components/*": [
-        "components/*"
-      ],
-      "@features/*": [
-        "features/*"
-      ],
-      "@wrappers/*": [
-        "wrappers/*"
-      ],
-     
-    }
+    "types": ["jest"],
+    "paths": {
+      "@components/*": ["components/*"],
+      "@features/*": ["features/*"],
+      "@wrappers/*": ["wrappers/*"]
+    },
+    "incremental": false
   },
   "exclude": [
     "node_modules",
@@ -48,10 +37,5 @@
     "jest",
     "src/setupTests.ts"
   ],
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "codegen.js"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "codegen.js"]
 }
