@@ -7,24 +7,43 @@
 // GraphQL query operation: Category
 // ====================================================
 
-export interface Category_category_articles_category {
-  __typename: "Category";
-  id: string;
+export interface Category_category_data_attributes_image_data_attributes {
+  __typename: "UploadFile";
   name: string;
+  alternativeText: string | null;
+  width: number | null;
+  height: number | null;
+  url: string;
 }
 
-export interface Category_category_articles {
-  __typename: "Article";
-  id: string;
-  title: string;
-  description: string;
-  category: Category_category_articles_category | null;
+export interface Category_category_data_attributes_image_data {
+  __typename: "UploadFileEntity";
+  id: string | null;
+  attributes: Category_category_data_attributes_image_data_attributes | null;
+}
+
+export interface Category_category_data_attributes_image {
+  __typename: "UploadFileEntityResponse";
+  data: Category_category_data_attributes_image_data | null;
+}
+
+export interface Category_category_data_attributes {
+  __typename: "Category";
+  name: string;
+  slug: string | null;
+  createdAt: any | null;
+  image: Category_category_data_attributes_image | null;
+}
+
+export interface Category_category_data {
+  __typename: "CategoryEntity";
+  id: string | null;
+  attributes: Category_category_data_attributes | null;
 }
 
 export interface Category_category {
-  __typename: "Category";
-  name: string;
-  articles: (Category_category_articles | null)[] | null;
+  __typename: "CategoryEntityResponse";
+  data: Category_category_data | null;
 }
 
 export interface Category {
