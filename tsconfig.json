@@ -1,8 +1,15 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
+    "baseUrl": ".",
+    "target": "esnext",
+    "module": "esnext",
+    "jsx": "preserve",
+    "lib": ["dom", "es2017"],
+    "moduleResolution": "node",
+    "allowJs": false,
+    "noEmit": true,
+    "strict": true,
+    "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
@@ -12,13 +19,13 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
+    "types": ["jest"],
     "paths": {
-      "@components/*": ["./components/*"],
-      "@features/*": ["./features/*"],
-      "@wrappers/*": ["./wrappers/*"]
-    }
+      "@components/*": ["components/*"],
+      "@features/*": ["features/*"],
+      "@wrappers/*": ["wrappers/*"]
+    },
+    "incremental": false
   },
   "exclude": [
     "node_modules",
