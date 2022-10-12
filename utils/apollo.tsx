@@ -30,7 +30,7 @@ function createIsomorphicLink(_context: GraphQlContext | undefined) {
    */
   const { HttpLink } = require("@apollo/client")
   return new HttpLink({
-    uri: "https://farnamh.ir/graphql",
+    uri: "https://farnam.tech/graphql",
     credentials: "same-origin",
   })
 }
