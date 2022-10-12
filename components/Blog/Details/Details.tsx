@@ -1,32 +1,31 @@
 import { useQuery } from "@apollo/react-hooks"
 import Image from "next/image"
+import { getOneArticle } from "graphql/Queries"
 import { useEffect, useState } from "react"
+import {
+  Article,
+  Article_article_data,
+} from "graphql/Queries/__generated__/Article"
 import { format } from "date-fns"
 import styled from "styled-components"
 import Round from "../../../public/RoundCube-White-Matte.svg"
-import { Article_article } from "../../../graphql/Queries/__generated__/Article"
-import useWindowSize from "../../../hooks/useWindowSize"
-import { getArticleWithID } from "../../../graphql/Queries"
+import useWindowSize from "hooks/useWindowSize"
+import ReactMarkdown from "markdown-to-jsx"
 
 const GlassDiv = styled.div`
   position: relative;
-
   background: linear-gradient(
     152.97deg,
     rgba(255, 255, 255, 0.2) 0%,
     rgba(255, 255, 255, 0) 100%
   );
   width: 100%;
-  height: 882px;
+  height: auto;
   backdrop-filter: blur(42px);
   /* Note: backdrop-filter has minimal browser support */
-
   border-radius: 16px;
-
   /* border: 1px solid; */
-
   border-image-slice: 1;
-
   border-image-source: radial-gradient(
     69.43% 69.43% at 50% 50%,
     #000000 0%,
@@ -38,13 +37,13 @@ interface DetailsProps {
   postId: string | number
 }
 
-const url = "https://farnamh.ir"
+const url = "https://farnam.tech"
 
 const Details: React.FC<DetailsProps> = ({ postId }) => {
-  const [postData, setPostData] = useState<Article_article | null>(null)
+  const [postData, setPostData] = useState<Article_article_data | null>(null)
   const [id, setId] = useState<string | number>(1)
 
-  const { data, error, loading } = useQuery(getArticleWithID, {
+  const { data, error, loading } = useQuery<Article>(getOneArticle, {
     variables: {
       id: id,
     },
@@ -53,8 +52,8 @@ const Details: React.FC<DetailsProps> = ({ postId }) => {
   const size = useWindowSize()
 
   useEffect(() => {
-    if (data) {
-      setPostData(data?.articles?.[0])
+    if (data && data.article) {
+      setPostData(data.article.data as Article_article_data)
     }
   }, [data, postId])
 
@@ -63,14 +62,6 @@ const Details: React.FC<DetailsProps> = ({ postId }) => {
       setId(postId)
     }
   }, [postId])
-
-  useEffect(() => {
-    if (postData) {
-      let date = format(new Date(postData?.published_at), "yyyy-MM-dd")
-
-      console.log("date: ", date)
-    }
-  }, [postData])
 
   return (
     <div>
@@ -83,28 +74,46 @@ const Details: React.FC<DetailsProps> = ({ postId }) => {
           <div className="w-full h-full">
             <div className="w-full h-auto">
               <Image
-                src={postData.image?.url as any}
-                alt={postData.image?.alternativeText as string}
+                src={
+                  postData.attributes?.Coverphoto?.data?.attributes?.url as any
+                }
+                alt={
+                  postData.attributes?.Coverphoto?.data?.attributes
+                    ?.alternativeText as string
+                }
                 loader={() => {
-                  return `${url}${postData.image?.url}`
+                  return `${url}${postData.attributes?.Coverphoto?.data?.attributes?.url}`
                 }}
                 layout="responsive"
                 objectFit="contain"
-                width={postData.image?.width as number}
-                height={postData.image?.height as number}
+                width={
+                  postData.attributes?.Coverphoto?.data?.attributes
+                    ?.width as number
+                }
+                height={
+                  postData.attributes?.Coverphoto?.data?.attributes
+                    ?.height as number
+                }
               />
             </div>
             <div className="w-full">
               <h1 className="my-10 text-5xl font-extrabold text-white font-custom">
-                {postData.title}
+                {postData.attributes?.title}
               </h1>
               <span className="my-10 text-2xl font-bold text-white font-apparel">
-                {postData?.published_at &&
-                  format(new Date(postData?.published_at), "yyyy-MM-dd HH:mm")}
+                {postData.attributes?.createdAt &&
+                  format(
+                    new Date(postData.attributes.createdAt),
+                    "yyyy-MM-dd HH:mm"
+                  )}
               </span>
 
               <GlassDiv className="z-10 p-5 my-10 text-2xl text-white md:text-3xl font-apparel">
-                {postData?.description}
+                {/* {postData.attributes?.description} */}
+
+                <ReactMarkdown
+                  children={postData.attributes?.description as any}
+                />
               </GlassDiv>
               {size > 1042 && (
                 <div className="relative z-0 flex items-center justify-end w-full max-w-full -top-48 ">

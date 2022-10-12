@@ -1,30 +1,32 @@
 import { useEffect, useState } from "react"
 import Image from "next/image"
-// import { GetStaticProps } from "next"
-// import { getApolloClient } from "utils/apollo"
-
+import { Title } from "components"
+import { MyLayout } from "wrappers"
 import { getArticles } from "../../graphql/Queries"
-
+import {
+  Articles,
+  Articles_articles,
+  Articles_articles_data,
+} from "graphql/Queries/__generated__/Articles"
+import Categories from "@components/Blog/Categories/Categories"
+import Details from "@components/Blog/Details/Details"
 import { useQuery } from "@apollo/react-hooks"
-import { Articles_articles } from "../../graphql/Queries/__generated__/Articles"
-import { MyLayout } from "../../wrappers"
-import Categories from "../../components/Blog/Categories/Categories"
-import Details from "../../components/Blog/Details/Details"
-import { Title } from "../../components"
+import { NextPage } from "next"
 
 interface Blog {
-  data: Articles_articles[]
+  data: Articles_articles_data
 }
 
-const Blog: React.FC<Blog> = () => {
+const Blog: NextPage = () => {
+  const [articlesData, setArticlesData] = useState<Articles_articles_data[]>([])
   const [postId, setPostId] = useState<string | number>(1)
-  const [articlesData, setArticlesData] = useState<Articles_articles[]>([])
 
-  const { data, error, loading } = useQuery(getArticles)
+  const { data, error, loading } = useQuery<Articles>(getArticles)
 
   useEffect(() => {
-    if (data) {
-      setArticlesData(data.articles)
+    console.log({ data })
+    if (data && data.articles) {
+      setArticlesData(data.articles.data)
     }
   }, [data])
 
