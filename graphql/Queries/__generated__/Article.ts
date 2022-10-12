@@ -7,29 +7,43 @@
 // GraphQL query operation: Article
 // ====================================================
 
-export interface Article_article_category {
-  __typename: "Category";
-  id: string;
-  name: string;
-}
-
-export interface Article_article_image {
+export interface Article_article_data_attributes_Coverphoto_data_attributes {
   __typename: "UploadFile";
-  id: string;
+  name: string;
   alternativeText: string | null;
-  url: string;
   width: number | null;
   height: number | null;
+  url: string;
+}
+
+export interface Article_article_data_attributes_Coverphoto_data {
+  __typename: "UploadFileEntity";
+  id: string | null;
+  attributes: Article_article_data_attributes_Coverphoto_data_attributes | null;
+}
+
+export interface Article_article_data_attributes_Coverphoto {
+  __typename: "UploadFileEntityResponse";
+  data: Article_article_data_attributes_Coverphoto_data | null;
+}
+
+export interface Article_article_data_attributes {
+  __typename: "Article";
+  title: string;
+  description: string | null;
+  createdAt: any | null;
+  Coverphoto: Article_article_data_attributes_Coverphoto | null;
+}
+
+export interface Article_article_data {
+  __typename: "ArticleEntity";
+  id: string | null;
+  attributes: Article_article_data_attributes | null;
 }
 
 export interface Article_article {
-  __typename: "Article";
-  id: string;
-  title: string;
-  description: string;
-  category: Article_article_category | null;
-  image: Article_article_image | null;
-  published_at: any | null;
+  __typename: "ArticleEntityResponse";
+  data: Article_article_data | null;
 }
 
 export interface Article {

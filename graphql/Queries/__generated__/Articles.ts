@@ -7,31 +7,45 @@
 // GraphQL query operation: Articles
 // ====================================================
 
-export interface Articles_articles_category {
-  __typename: "Category";
-  id: string;
-  name: string;
-}
-
-export interface Articles_articles_image {
+export interface Articles_articles_data_attributes_Coverphoto_data_attributes {
   __typename: "UploadFile";
-  id: string;
+  name: string;
   alternativeText: string | null;
-  url: string;
   width: number | null;
   height: number | null;
+  url: string;
+}
+
+export interface Articles_articles_data_attributes_Coverphoto_data {
+  __typename: "UploadFileEntity";
+  id: string | null;
+  attributes: Articles_articles_data_attributes_Coverphoto_data_attributes | null;
+}
+
+export interface Articles_articles_data_attributes_Coverphoto {
+  __typename: "UploadFileEntityResponse";
+  data: Articles_articles_data_attributes_Coverphoto_data | null;
+}
+
+export interface Articles_articles_data_attributes {
+  __typename: "Article";
+  title: string;
+  description: string | null;
+  createdAt: any | null;
+  Coverphoto: Articles_articles_data_attributes_Coverphoto | null;
+}
+
+export interface Articles_articles_data {
+  __typename: "ArticleEntity";
+  id: string | null;
+  attributes: Articles_articles_data_attributes | null;
 }
 
 export interface Articles_articles {
-  __typename: "Article";
-  id: string;
-  title: string;
-  description: string;
-  category: Articles_articles_category | null;
-  image: Articles_articles_image | null;
-  published_at: any | null;
+  __typename: "ArticleEntityResponseCollection";
+  data: Articles_articles_data[];
 }
 
 export interface Articles {
-  articles: (Articles_articles | null)[] | null;
+  articles: Articles_articles | null;
 }
