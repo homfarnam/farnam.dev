@@ -1,32 +1,35 @@
-/** @type {import('next').NextConfig} */
-const securityHeaders = [
-  {
-    key: "X-DNS-Prefetch-Control",
-    value: "on",
-  },
-
-  {
-    key: "X-Frame-Options",
-    value: "SAMEORIGIN",
-  },
-  {
-    key: "Permissions-Policy",
-    value: "camera=(), microphone=(), geolocation=(), interest-cohort=()",
-  },
-]
+// const withCSS = require("@zeit/next-css")
+const withPurgeCss = require("next-purgecss")
+const withFonts = require("next-fonts")
+const withBabelMinify = require("next-babel-minify")({
+  comments: false,
+})
+const withPlugins = require("next-compose-plugins")
 
 module.exports = {
   reactStrictMode: true,
 }
 
 module.exports = {
-  async headers() {
-    return [
-      {
-        // Apply these headers to all routes in your application.
-        source: "/(.*)",
-        headers: securityHeaders,
-      },
-    ]
+  images: {
+    domains: ["nextjs.org", "farnamh.ir", "farnam.tech"],
   },
 }
+
+// module.exports = withPlugins([], {
+//   webpack5: false,
+// })
+
+// module.exports = withCSS(
+//   {
+//     env: {
+//       API_URL: process.env.API_URL,
+//     },
+//   },
+//   withPurgeCss({
+//     purgeCssPaths: [
+//       "pages/**/*",
+//       "components/**/*", // also scan other-components folder
+//     ],
+//   })
+// )
