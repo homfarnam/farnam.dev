@@ -1,12 +1,23 @@
 query article($id: ID!) {
   article(id: $id) {
-    id
-    title
-    description
-    category {
+    data {
       id
-      name
+      attributes {
+        title
+        description
+        Coverphoto {
+          data {
+            id
+            attributes {
+              name
+              alternativeText
+              width
+              height
+              url
+            }
+          }
+        }
+      }
     }
-    published_at
   }
 }
