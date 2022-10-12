@@ -1,24 +1,34 @@
 import { useEffect, useState } from "react"
 import Image from "next/image"
-import { GetStaticProps } from "next"
-import { getApolloClient } from "utils/apollo"
 import { Title } from "components"
 import { MyLayout } from "wrappers"
 import { getArticles } from "../../graphql/Queries"
-import { Articles_articles } from "graphql/Queries/__generated__/Articles"
+import {
+  Articles,
+  Articles_articles,
+  Articles_articles_data,
+} from "graphql/Queries/__generated__/Articles"
 import Categories from "@components/Blog/Categories/Categories"
 import Details from "@components/Blog/Details/Details"
+import { useQuery } from "@apollo/react-hooks"
+import { NextPage } from "next"
 
 interface Blog {
-  data: Articles_articles[]
+  data: Articles_articles_data
 }
 
-const Blog: React.FC<Blog> = ({ data }) => {
+const Blog: NextPage = () => {
+  const [articlesData, setArticlesData] = useState<Articles_articles_data[]>([])
   const [postId, setPostId] = useState<string | number>(1)
 
+  const { data, error, loading } = useQuery<Articles>(getArticles)
+
   useEffect(() => {
-    console.log("postId: ", postId)
-  }, [postId])
+    console.log({ data })
+    if (data && data.articles) {
+      setArticlesData(data.articles.data)
+    }
+  }, [data])
 
   return (
     <MyLayout className="container flex-grow mx-auto" title="blog">
@@ -35,12 +45,21 @@ const Blog: React.FC<Blog> = ({ data }) => {
         </div>
         <div className="blog__cards">
           <Title className="text-5xl text-white">The Blog </Title>
-          <Categories
-            data={data}
-            selectedPost={(id: string | number) => {
-              setPostId(id)
-            }}
-          />
+          {error ? (
+            <p>{error}</p>
+          ) : loading ? (
+            "loading"
+          ) : (
+            articlesData.length > 0 && (
+              <Categories
+                data={articlesData}
+                selectedPost={(id: string | number) => {
+                  setPostId(id)
+                }}
+              />
+            )
+          )}
+
           <Details postId={postId} />
         </div>
       </div>
@@ -49,19 +68,3 @@ const Blog: React.FC<Blog> = ({ data }) => {
 }
 
 export default Blog
-
-export const getStaticProps: GetStaticProps = async () => {
-  const apolloClient = getApolloClient({})
-
-  const {
-    data: { articles },
-  } = await apolloClient.query({
-    query: getArticles,
-  })
-
-  return {
-    props: {
-      data: articles,
-    },
-  }
-}
