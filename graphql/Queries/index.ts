@@ -1,45 +1,28 @@
 import { gql } from "@apollo/client"
 
-export const getArticle = gql`
+export const getOneArticle = gql`
   query Article($id: ID!) {
     article(id: $id) {
-      id
-      title
-      description
-      category {
+      data {
         id
-        name
+        attributes {
+          title
+          description
+          createdAt
+          Coverphoto {
+            data {
+              id
+              attributes {
+                name
+                alternativeText
+                width
+                height
+                url
+              }
+            }
+          }
+        }
       }
-      image {
-        id
-        alternativeText
-        url
-        width
-        height
-      }
-      published_at
-    }
-  }
-`
-
-export const getArticleWithID = gql`
-  query ArticleId($id: ID!) {
-    articles(where: { id: $id }) {
-      id
-      title
-      description
-      category {
-        id
-        name
-      }
-      image {
-        id
-        alternativeText
-        url
-        width
-        height
-      }
-      published_at
     }
   }
 `
@@ -47,52 +30,78 @@ export const getArticleWithID = gql`
 export const getArticles = gql`
   query Articles {
     articles {
-      id
-      title
-      description
-      category {
+      data {
         id
-        name
-      }
-      image {
-        id
-        alternativeText
-        url
-        width
-        height
-      }
-      published_at
-    }
-  }
-`
-export const getCategories = gql`
-  query Categories {
-    categories {
-      id
-      name
-      image {
-        id
-        name
-        url
-        width
-        height
-        alternativeText
+        attributes {
+          title
+          description
+          createdAt
+          Coverphoto {
+            data {
+              id
+              attributes {
+                name
+                alternativeText
+                width
+                height
+                url
+              }
+            }
+          }
+        }
       }
     }
   }
 `
 
-export const getCategoryArticles = gql`
+export const getCategories = gql`
+  query Categories {
+    categories {
+      data {
+        id
+        attributes {
+          name
+          slug
+          createdAt
+          image {
+            data {
+              id
+              attributes {
+                name
+                alternativeText
+                width
+                height
+                url
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
+
+export const getOneCategory = gql`
   query Category($id: ID!) {
     category(id: $id) {
-      name
-      articles {
+      data {
         id
-        title
-        description
-        category {
-          id
+        attributes {
           name
+          slug
+          createdAt
+          image {
+            data {
+              id
+              attributes {
+                name
+                alternativeText
+                width
+                height
+                url
+              }
+            }
+          }
         }
       }
     }
