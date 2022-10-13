@@ -29,11 +29,11 @@ const GlassDiv = styled.div`
 
 interface GlasscardProps {
   className?: HTMLAttributes<HTMLDivElement>["className"]
-  info?: React.ReactNode
+  children?: React.ReactNode
 }
 
-const Glasscard: React.FC<GlasscardProps> = ({ className, info }) => {
-  return <GlassDiv className={className}>{info}</GlassDiv>
+const Glasscard: React.FC<GlasscardProps> = ({ className, children }) => {
+  return <GlassDiv className={className}>{children}</GlassDiv>
 }
 
 export default Glasscard
