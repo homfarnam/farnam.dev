@@ -20,23 +20,21 @@ const Categories: React.FC<CategoriesProps> = ({ data, selectedPost }) => {
             <div key={item.id} className="blog__cards--categories__card">
               <Glasscard className="z-0" />
               <Glasscard className="relative p-5 -top-32 -right-10">
-                {item.attributes?.Coverphoto?.data?.attributes?.url && (
-                  <Image
-                    className="rounded-3xl"
-                    src={
-                      item.attributes?.Coverphoto?.data?.attributes?.url as any
-                    }
-                    alt={
-                      item.attributes?.Coverphoto?.data?.attributes
-                        ?.alternativeText as any
-                    }
-                    layout="fill"
-                    loader={myLoader}
-                    onClick={() => {
-                      selectedPost(item.id as string)
-                    }}
-                  />
-                )}
+                <Image
+                  className="rounded-3xl"
+                  src={
+                    item.attributes?.Coverphoto?.data?.attributes?.url as any
+                  }
+                  alt={
+                    item.attributes?.Coverphoto?.data?.attributes
+                      ?.alternativeText as any
+                  }
+                  layout="fill"
+                  loader={myLoader}
+                  onClick={() => {
+                    selectedPost(item.id as string)
+                  }}
+                />
               </Glasscard>
               <div
                 className="blog__cards--categories__card__data"
