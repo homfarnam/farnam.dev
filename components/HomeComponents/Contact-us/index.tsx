@@ -1,7 +1,9 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import Image from "next/image"
 import ChatIcon from "../../../public/chat.svg"
+import { useMutation } from "@apollo/client"
+import { createForm } from "graphql/Queries/mutation"
 
 const ContactUsSection = styled.div`
   background: linear-gradient(
@@ -70,12 +72,40 @@ const SubmitButton = styled.button`
 `
 
 const ContactUs: React.FC = () => {
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [description, setDescription] = useState("")
+
+  const [addToForm] = useMutation(createForm, {
+    onError: (err) => {
+      console.log(err)
+    },
+    onCompleted: (data) => {
+      alert("Form submitted successfully")
+      console.log(data)
+    },
+  })
+
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setName(e.target.value)
+  }
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value)
+  }
+
+  const handleDescriptionChange = (
+    e: React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
+    setDescription(e.target.value)
+  }
+
   return (
-    <div className="h-full w-full my-20 flex flex-col justify-start">
-      <h3 className="text-white my-5 text-4xl font-pilat font-bold">
+    <div className="flex flex-col justify-start w-full h-full my-20">
+      <h3 className="my-5 text-4xl font-bold text-white font-pilat">
         Stay in Touch
       </h3>
-      <div className="flex flex-col xl:flex-row items-center justify-center lg:justify-start">
+      <div className="flex flex-col items-center justify-center xl:flex-row lg:justify-start">
         <div className="hidden 2xl:block">
           <Image
             src={ChatIcon}
@@ -84,47 +114,67 @@ const ContactUs: React.FC = () => {
           />
         </div>
         <ContactUsSection className="contact-us">
-          <div className="space-y-4 mt-10 w-full">
+          <div className="w-full mt-10 space-y-4">
             <div className="flex items-center w-full lg:w-1/2 name-input">
               <label
                 htmlFor="name"
-                className="italic absolute text-white font-semibold"
+                className="absolute italic font-semibold text-white"
               >
                 Name
               </label>
               <input
                 type="text"
                 id="name"
-                className="pl-14 py-2 text-white w-full"
+                className="w-full py-2 text-white pl-14"
+                value={name}
+                onChange={handleNameChange}
               />
             </div>
             <div className="flex items-center w-full lg:w-1/2 name-input">
               <label
                 htmlFor="email"
-                className="italic absolute text-white font-semibold"
+                className="absolute italic font-semibold text-white"
               >
                 Email
               </label>
               <input
                 type="text"
                 id="email"
-                className="pl-14 py-2 text-white w-full"
+                className="w-full py-2 text-white pl-14"
+                value={email}
+                onChange={handleEmailChange}
               />
             </div>
             <div className="flex items-start w-full lg:w-1/2 name-input">
               <label
                 htmlFor="message"
-                className="italic absolute text-white font-semibold"
+                className="absolute italic font-semibold text-white"
               >
                 Message
               </label>
-              <textarea className=" text-white w-full py-7 " id="message" />
+              <textarea
+                value={description}
+                className="w-full text-white py-7"
+                id="message"
+                onChange={handleDescriptionChange}
+              />
             </div>
           </div>
         </ContactUsSection>
       </div>
-      <div className="lg:w-full m-auto flex justify-end items-center py-3">
-        <SubmitButton className="text-xl font-medium relative xl:-top-16 xl:-right-8">
+      <div className="flex items-center justify-end py-3 m-auto lg:w-full">
+        <SubmitButton
+          onClick={() => {
+            addToForm({
+              variables: {
+                name,
+                description,
+                email,
+              },
+            })
+          }}
+          className="relative text-xl font-medium xl:-top-16 xl:-right-8"
+        >
           Submit
         </SubmitButton>
       </div>
