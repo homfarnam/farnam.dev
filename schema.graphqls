@@ -233,7 +233,6 @@ input ArticleFiltersInput {
   id: IDFilterInput
   title: StringFilterInput
   description: StringFilterInput
-  date: DateTimeFilterInput
   slug: StringFilterInput
   category: CategoryFiltersInput
   createdAt: DateTimeFilterInput
@@ -248,7 +247,6 @@ input ArticleInput {
   title: String
   description: String
   Coverphoto: ID
-  date: DateTime
   slug: String
   category: ID
   publishedAt: DateTime
@@ -256,9 +254,8 @@ input ArticleInput {
 
 type Article {
   title: String!
-  description: String
-  Coverphoto: UploadFileEntityResponse
-  date: DateTime
+  description: String!
+  Coverphoto: UploadFileEntityResponse!
   slug: String
   category: CategoryEntityResponse
   createdAt: DateTime
@@ -326,6 +323,49 @@ type CategoryEntityResponse {
 
 type CategoryEntityResponseCollection {
   data: [CategoryEntity!]!
+  meta: ResponseCollectionMeta!
+}
+
+input FormFiltersInput {
+  id: IDFilterInput
+  name: StringFilterInput
+  email: StringFilterInput
+  description: StringFilterInput
+  createdAt: DateTimeFilterInput
+  updatedAt: DateTimeFilterInput
+  publishedAt: DateTimeFilterInput
+  and: [FormFiltersInput]
+  or: [FormFiltersInput]
+  not: FormFiltersInput
+}
+
+input FormInput {
+  name: String
+  email: String
+  description: String
+  publishedAt: DateTime
+}
+
+type Form {
+  name: String!
+  email: String!
+  description: String
+  createdAt: DateTime
+  updatedAt: DateTime
+  publishedAt: DateTime
+}
+
+type FormEntity {
+  id: ID
+  attributes: Form
+}
+
+type FormEntityResponse {
+  data: FormEntity
+}
+
+type FormEntityResponseCollection {
+  data: [FormEntity!]!
   meta: ResponseCollectionMeta!
 }
 
@@ -628,7 +668,7 @@ type UsersPermissionsUserRelationResponseCollection {
   data: [UsersPermissionsUserEntity!]!
 }
 
-union GenericMorph = Article | Category | UploadFile | UploadFolder | I18NLocale | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser
+union GenericMorph = Article | Category | Form | UploadFile | UploadFolder | I18NLocale | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser
 
 input FileInfoInput {
   name: String
@@ -697,6 +737,8 @@ type Query {
   articles(filters: ArticleFiltersInput, pagination: PaginationArg = {}, sort: [String] = [], publicationState: PublicationState = LIVE): ArticleEntityResponseCollection
   category(id: ID): CategoryEntityResponse
   categories(filters: CategoryFiltersInput, pagination: PaginationArg = {}, sort: [String] = [], publicationState: PublicationState = LIVE): CategoryEntityResponseCollection
+  form(id: ID): FormEntityResponse
+  forms(filters: FormFiltersInput, pagination: PaginationArg = {}, sort: [String] = [], publicationState: PublicationState = LIVE): FormEntityResponseCollection
   uploadFile(id: ID): UploadFileEntityResponse
   uploadFiles(filters: UploadFileFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): UploadFileEntityResponseCollection
   uploadFolder(id: ID): UploadFolderEntityResponse
@@ -717,6 +759,9 @@ type Mutation {
   createCategory(data: CategoryInput!): CategoryEntityResponse
   updateCategory(id: ID!, data: CategoryInput!): CategoryEntityResponse
   deleteCategory(id: ID!): CategoryEntityResponse
+  createForm(data: FormInput!): FormEntityResponse
+  updateForm(id: ID!, data: FormInput!): FormEntityResponse
+  deleteForm(id: ID!): FormEntityResponse
   createUploadFile(data: UploadFileInput!): UploadFileEntityResponse
   updateUploadFile(id: ID!, data: UploadFileInput!): UploadFileEntityResponse
   deleteUploadFile(id: ID!): UploadFileEntityResponse
