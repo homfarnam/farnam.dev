@@ -27,7 +27,7 @@ const links = [
 
 const Header: React.FC<HeaderProps> = () => {
   return (
-    <MyHeader className="flex flex-wrap items-center justify-start px-6 py-2 lg:px-16 lg:py-0">
+    <MyHeader className="menu">
       <div className="flex justify-self-auto">
         <label
           htmlFor="menu-toggle"
