@@ -30,9 +30,9 @@ export interface Articles_articles_data_attributes_Coverphoto {
 export interface Articles_articles_data_attributes {
   __typename: "Article";
   title: string;
-  description: string | null;
+  description: string;
   createdAt: any | null;
-  Coverphoto: Articles_articles_data_attributes_Coverphoto | null;
+  Coverphoto: Articles_articles_data_attributes_Coverphoto;
 }
 
 export interface Articles_articles_data {
