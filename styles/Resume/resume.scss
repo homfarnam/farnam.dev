@@ -2,8 +2,12 @@
   @apply bg-[#08172E] w-screen h-screen;
 
   &__main {
-    @apply flex flex-col lg:flex-row items-center justify-between w-full space-x-3;
+    @apply flex flex-col items-center justify-between w-full space-x-3;
     height: calc(100vh - 3.7rem);
+
+    @screen lg {
+      @apply flex-row max-w-screen-2xl mx-auto;
+    }
 
     &--image {
       @apply z-50  h-full w-3/4 relative bottom-0 left-0 flex flex-col justify-end items-start;

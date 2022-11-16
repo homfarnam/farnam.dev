@@ -30,3 +30,16 @@
     }
   }
 }
+
+pre {
+  @apply bg-gray-500/40 p-5 rounded-md text-lg;
+  width: 100%;
+  margin: 0;
+  overflow: auto;
+  overflow-y: hidden;
+  line-height: 20px;
+  border: 1px solid #777;
+}
+pre code {
+  color: rgb(33, 33, 33);
+}
