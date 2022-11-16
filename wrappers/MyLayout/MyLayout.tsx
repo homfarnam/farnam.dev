@@ -8,6 +8,7 @@ interface MyLayoutProps {
   noBg?: boolean
   children: React.ReactNode
   className?: HTMLAttributes<HTMLDivElement>["className"]
+  bgColor?: string
 }
 
 const MyLayout: React.FC<MyLayoutProps> = ({
@@ -15,11 +16,13 @@ const MyLayout: React.FC<MyLayoutProps> = ({
   title,
   noBg,
   className = "",
+  bgColor,
 }) => {
   const BackG = styled.div`
     background-image: ${(_props) => (noBg ? "" : 'url("/union.webp")')};
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: ${(_props) => (bgColor ? bgColor : "")};
   `
 
   return (
