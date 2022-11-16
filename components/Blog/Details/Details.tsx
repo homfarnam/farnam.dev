@@ -70,8 +70,9 @@ const Details: React.FC<DetailsProps> = ({ postId }) => {
       ) : loading ? (
         "loading"
       ) : (
-        postData && (
-          <div className="w-full h-full">
+        postData &&
+        postData.attributes && (
+          <article className="w-full h-full">
             <div className="w-full h-auto">
               <Image
                 src={
@@ -108,11 +109,11 @@ const Details: React.FC<DetailsProps> = ({ postId }) => {
                   )}
               </span>
 
-              <GlassDiv className="z-10 p-5 my-10 text-2xl text-white md:text-3xl font-apparel">
-                {/* {postData.attributes?.description} */}
-
-                <ReactMarkdown
-                  children={postData.attributes?.description as any}
+              <GlassDiv className="z-10 w-full p-5 my-10 text-3xl text-white font-Matter">
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: postData.attributes.description as string,
+                  }}
                 />
               </GlassDiv>
               {size > 1042 && (
@@ -121,7 +122,7 @@ const Details: React.FC<DetailsProps> = ({ postId }) => {
                 </div>
               )}
             </div>
-          </div>
+          </article>
         )
       )}
     </div>
