@@ -10,20 +10,10 @@ interface Blog {
   data: Articles_articles[]
 }
 
-// const FH = styled.div`
-//   background-image: url("/fh.png");
-//   background-repeat: no-repeat;
-//   background-size: cover;
-//   object-fit: contain;
-
-//   height: 100vh;
-//   width: 50%;
-// `
-
 const Resume: React.FC<Blog> = () => {
   const size = useWindowSize()
   return (
-    <MyLayout noBg className="resume" title="Resume">
+    <MyLayout noBg bgColor="#08172E" className="resume" title="Resume">
       <div className="resume__main">
         <div className="resume__main--image">
           {size > 1024 && (
