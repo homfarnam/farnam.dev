@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+@theme {
+  --color-void: #080b12;
+  --color-navy: #101827;
+  --color-signal: #3b82f6;
+  --color-cyan: #22d3ee;
+  --color-ember: #f97316;
+  --color-ink: #f8fafc;
+  --color-mute: #94a3b8;
+  --color-line: rgb(148 163 184 / 0.18);
+
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --ease-cinematic: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html,
+  body {
+    background: var(--color-void);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body.experience-active {
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
+
+  ::selection {
+    background: rgb(34 211 238 / 0.35);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-cyan);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+@layer components {
+  /* An instrument panel: thin frame, notched corners, faint inner glow. */
+  .instrument {
+    position: relative;
+    background: linear-gradient(180deg, rgb(16 24 39 / 0.86), rgb(8 11 18 / 0.92));
+    border: 1px solid var(--color-line);
+    box-shadow:
+      inset 0 1px 0 rgb(34 211 238 / 0.08),
+      0 30px 80px -40px rgb(0 0 0 / 0.9);
+    backdrop-filter: blur(6px);
+  }
+
+  .instrument::before,
+  .instrument::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-color: var(--color-cyan);
+    border-style: solid;
+    opacity: 0.7;
+    pointer-events: none;
+  }
+
+  .instrument::before {
+    top: -1px;
+    left: -1px;
+    border-width: 1px 0 0 1px;
+  }
+
+  .instrument::after {
+    bottom: -1px;
+    right: -1px;
+    border-width: 0 1px 1px 0;
+  }
+
+  .scanlines {
+    background-image: repeating-linear-gradient(0deg, rgb(255 255 255 / 0.025) 0 1px, transparent 1px 3px);
+  }
+
+  .caret::after {
+    content: "";
+    display: inline-block;
+    width: 0.55em;
+    height: 1em;
+    margin-left: 2px;
+    vertical-align: -0.15em;
+    background: var(--color-cyan);
+    animation: caret-blink 1s steps(1) infinite;
+  }
+}
+
+@keyframes caret-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+@keyframes panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.985);
+    clip-path: inset(0 0 100% 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes line-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+/* Headline lines rise out of their own mask. */
+@keyframes rise-in {
+  from {
+    transform: translateY(105%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes draw-x {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

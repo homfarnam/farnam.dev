@@ -1,0 +1,18 @@
+{
+  "_note": "Shared projection for the Journey map. Web Mercator; chamber-local +x = north, +z = east. Used by scripts/bake-geo.mjs and src/lib/world/geo.ts.",
+  "scale": 81.0,
+  "lon0": 28.1633,
+  "merc0": 0.873422,
+  "zOffset": -30.898,
+  "bounds": {
+    "lonMin": -12,
+    "lonMax": 62,
+    "latMin": 23,
+    "latMax": 58
+  },
+  "diorama": {
+    "radius": 9,
+    "heightExaggeration": 2.3
+  },
+  "landHeight": 0.32
+}
