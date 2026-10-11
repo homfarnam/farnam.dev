@@ -1,4 +1,0 @@
-schema: https://farnam.tech/graphql
-generates:
-  src/types.ts:
-    - typescript
