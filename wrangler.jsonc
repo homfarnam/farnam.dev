@@ -1,0 +1,11 @@
+// Cloudflare Workers deploy: the site is a static export (next build → out/),
+// served as static assets. No server, so no OpenNext adapter is needed.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "farnam-dev",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./out",
+    "not_found_handling": "404-page"
+  }
+}
